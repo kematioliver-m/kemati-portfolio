@@ -110,10 +110,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mobile hamburger icon — make it visible on dark background */
 .km-navbar .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--km-gold);
+    padding: 6px 10px;
+    border-radius: 2px;
 }
+
 .km-navbar .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.7)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23B08D57' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 
@@ -615,4 +618,378 @@ body {
         font-size: 0.62rem;
     }
 
+}
+
+
+/* ============================================================
+   ABOUT PAGE STYLES
+   Add these to the bottom of style.css
+   ============================================================ */
+
+
+/* ── PAGE HERO ───────────────────────────────────────────────
+   Compact banner used on all inner pages (not full screen).
+   Much shorter than the home page hero.
+────────────────────────────────────────────────────────────── */
+.km-page-hero {
+    background-color: var(--km-navy);
+    padding: 72px 0 48px;  /* top padding accounts for fixed navbar */
+}
+
+.km-page-hero-title {
+    font-family: var(--km-font-heading);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--km-white);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+/* Eyebrow link style — for breadcrumb navigation */
+.km-eyebrow-link {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    font-family: var(--km-font-ui);
+    font-size: 0.68rem;
+    transition: color 0.2s ease;
+}
+.km-eyebrow-link:hover {
+    color: var(--km-gold);
+}
+
+
+/* ── SECTION HELPERS ─────────────────────────────────────────
+   Reusable section backgrounds.
+   km-section sets consistent vertical padding.
+   km-section--white and --ivory alternate background colours
+   to visually separate sections as the user scrolls.
+────────────────────────────────────────────────────────────── */
+.km-section {
+    padding: var(--km-section-py) 0;
+}
+.km-section--white {
+    background-color: var(--km-white);
+}
+.km-section--ivory {
+    background-color: var(--km-ivory);
+}
+
+
+/* ── PROFILE IMAGE ───────────────────────────────────────────
+   The profile photo on the About page.
+   object-fit: cover ensures the image fills its box
+   without distorting — crops neatly if needed.
+────────────────────────────────────────────────────────────── */
+.km-profile-img {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 3 / 4;       /* Portrait ratio — taller than wide */
+    object-fit: cover;          /* Fills the box, crops excess */
+    object-position: top center; /* Keeps face in frame */
+    display: block;
+}
+
+/* Placeholder shown before photo is added */
+.km-photo-placeholder {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 3 / 4;
+    background-color: var(--km-navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+}
+.km-photo-placeholder span {
+    font-family: var(--km-font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.15);
+}
+.km-photo-placeholder p {
+    font-family: var(--km-font-ui);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    padding: 0 1rem;
+    margin: 0;
+}
+
+/* Name and role caption below photo */
+.km-photo-name {
+    font-family: var(--km-font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--km-navy);
+}
+.km-photo-role {
+    font-family: var(--km-font-ui);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    margin-top: 3px;
+}
+
+
+/* ── QUICK FACTS ─────────────────────────────────────────────
+   Label + value pairs displayed as a definition-style list.
+   border-bottom creates a thin divider between each fact.
+────────────────────────────────────────────────────────────── */
+.km-quick-facts {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--km-border);
+}
+.km-fact {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--km-border);
+    align-items: baseline;
+}
+.km-fact-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    min-width: 110px;
+    flex-shrink: 0; /* Prevents label from shrinking */
+}
+.km-fact-value {
+    font-family: var(--km-font-body);
+    font-size: 0.88rem;
+    color: var(--km-charcoal);
+}
+
+
+/* ── TIMELINE ────────────────────────────────────────────────
+   Academic background timeline.
+   A vertical line runs down the left side.
+   Each item has a dot and indented content.
+────────────────────────────────────────────────────────────── */
+.km-timeline {
+    position: relative;
+    padding-left: 28px;
+    margin-top: 2rem;
+}
+
+/* The vertical line — a pseudo-element on the container */
+.km-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background-color: var(--km-border);
+}
+
+.km-timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+}
+.km-timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* The dot on the timeline line */
+.km-timeline-dot {
+    position: absolute;
+    left: -34px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;          /* Makes it a circle */
+    background-color: var(--km-navy);
+    border: 2px solid var(--km-white);
+    box-shadow: 0 0 0 1px var(--km-navy);
+}
+
+.km-timeline-period {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    margin-bottom: 4px;
+}
+.km-timeline-role {
+    font-family: var(--km-font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--km-navy);
+    margin-bottom: 3px;
+}
+.km-timeline-inst {
+    font-family: var(--km-font-ui);
+    font-size: 0.78rem;
+    color: var(--km-slate);
+    margin-bottom: 8px;
+}
+.km-timeline-desc {
+    font-family: var(--km-font-body);
+    font-size: 0.88rem;
+    color: var(--km-slate);
+    line-height: 1.75;
+    margin: 0;
+}
+
+
+/* ── EXPERIENCE CARDS ────────────────────────────────────────
+   Four placement cards showing each teaching position.
+   Bordered boxes with a header row showing period + hours.
+────────────────────────────────────────────────────────────── */
+.km-exp-card {
+    border: 1px solid var(--km-border);
+    padding: 1.6rem;
+    height: 100%;             /* Equal height within Bootstrap row */
+    background-color: var(--km-white);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.km-exp-card:hover {
+    border-color: var(--km-navy);
+    box-shadow: 0 4px 20px rgba(36, 59, 83, 0.06);
+}
+
+/* Header row: period on left, hours on right */
+.km-exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+.km-exp-period {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+}
+.km-exp-hrs {
+    font-family: var(--km-font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--km-navy);
+}
+
+.km-exp-role {
+    font-family: var(--km-font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--km-navy);
+    margin-bottom: 4px;
+}
+.km-exp-course {
+    font-family: var(--km-font-body);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--km-slate);
+    margin-bottom: 3px;
+}
+.km-exp-inst {
+    font-family: var(--km-font-ui);
+    font-size: 0.72rem;
+    color: var(--km-slate);
+    margin-bottom: 0.75rem;
+}
+.km-exp-desc {
+    font-family: var(--km-font-body);
+    font-size: 0.85rem;
+    color: var(--km-slate);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* Tag pills at bottom of each card */
+.km-exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.km-exp-tag {
+    font-family: var(--km-font-ui);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--km-navy);
+    background-color: var(--km-ivory);
+    border: 1px solid var(--km-border);
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+
+/* Highlight card — navy background for the total hours summary */
+.km-exp-card--highlight {
+    background-color: var(--km-navy);
+    border-color: var(--km-navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 200px;
+}
+.km-exp-total-num {
+    font-family: var(--km-font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--km-white);
+    line-height: 1;
+}
+.km-exp-total-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+.km-exp-total-sub {
+    font-family: var(--km-font-body);
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.6;
+}
+
+
+/* ── PROFESSIONAL DEVELOPMENT LIST ───────────────────────────
+   Simple icon + title + description list.
+   The icon is a small coloured square (HTML entity &#9632;).
+────────────────────────────────────────────────────────────── */
+.km-dev-list {
+    display: grid;
+    gap: 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--km-border);
+}
+.km-dev-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--km-border);
+    align-items: flex-start;
+}
+.km-dev-icon {
+    color: var(--km-gold);
+    font-size: 0.5rem;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+.km-dev-title {
+    font-family: var(--km-font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--km-navy);
+    margin-bottom: 4px;
+}
+.km-dev-desc {
+    font-family: var(--km-font-body);
+    font-size: 0.85rem;
+    color: var(--km-slate);
+    line-height: 1.75;
 }

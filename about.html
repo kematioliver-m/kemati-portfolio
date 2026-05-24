@@ -1,10 +1,475 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+  Kemati Morgan — Teaching Portfolio
+  about.html — About Me Page
+  ============================================================
+  STRUCTURE:
+  1. <head>       — meta, fonts, Bootstrap, stylesheet
+  2. <nav>        — same fixed navbar as index.html
+  3. <header>     — page hero (no full screen, just a banner)
+  4. <section>    — bio + photo (two column)
+  5. <section>    — academic background
+  6. <section>    — teaching experience timeline
+  7. <section>    — professional development
+  8. <footer>     — same footer as index.html
+  ============================================================
+-->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Mr. Kemati Morgan</title>
+
+    <!-- Google Fonts — same as index.html, always load consistently -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Our custom stylesheet — shared across all pages -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
+<!-- ============================================================
+     NAV — Identical on every page for consistency.
+     The active class on "About" tells the user where they are.
+============================================================ -->
+<nav class="navbar navbar-expand-lg fixed-top km-navbar">
+    <div class="container">
+        <a class="navbar-brand km-navbar-brand" href="index.html">Mr. Kemati Morgan</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <!-- active class highlights the current page link -->
+                <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="philosophy.html">Philosophy</a></li>
+                <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="lesson-plans.html">Lesson Plans</a></li>
+                <li class="nav-item"><a class="nav-link" href="assessments.html">Assessments</a></li>
+                <li class="nav-item"><a class="nav-link" href="artefacts.html">Artefacts</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ============================================================
+     PAGE HERO — Compact banner (not full screen like index.html)
+     Just enough to introduce the page with a title and breadcrumb.
+     km-page-hero is defined in style.css.
+============================================================ -->
+<header class="km-page-hero">
+    <div class="container">
+        <!-- Breadcrumb — helps user know where they are in the site -->
+        <p class="km-eyebrow">
+            <a href="index.html" class="km-eyebrow-link">Portfolio</a>
+            &nbsp;&rarr;&nbsp; About Me
+        </p>
+        <h1 class="km-page-hero-title">About Me</h1>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     BIO + PHOTO — Two column layout
+     Left (col-lg-4): profile photo
+     Right (col-lg-8): name, role, biography paragraph
+
+     On mobile Bootstrap collapses this to single column,
+     photo appears above the text.
+============================================================ -->
+<section class="km-section km-section--white">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+
+            <!-- Left column — photo -->
+            <div class="col-lg-4 text-center text-lg-start">
+                <!--
+                  Profile image.
+                  src points to assets/images/profile.jpg — add your photo there.
+                  alt text describes the image for screen readers and if image fails to load.
+                  km-profile-img class in style.css handles sizing and styling.
+                -->
+                <img
+                        src="assets/images/profile.jpg"
+                        alt="Mr. Kemati Morgan — Educator and Teaching Practice Student"
+                        class="km-profile-img"
+                        onerror="this.style.display='none'; document.getElementById('photo-placeholder').style.display='flex';"
+                >
+                <!--
+                  Placeholder shown if photo hasn't been added yet.
+                  onerror on the img above hides the img and shows this div.
+                  Once you add your photo, this will never be seen.
+                -->
+                <div id="photo-placeholder" class="km-photo-placeholder" style="display:none;">
+                    <span>KM</span>
+                    <p>Add profile.jpg to assets/images/</p>
+                </div>
+
+                <!-- Name card below photo -->
+                <div class="km-photo-caption mt-3">
+                    <div class="km-photo-name">Kemati Morgan</div>
+                    <div class="km-photo-role">Student Teacher · VTDI</div>
+                </div>
+            </div>
+
+            <!-- Right column — biography -->
+            <div class="col-lg-8">
+                <p class="km-section-label">Biography</p>
+                <h2 class="km-section-heading">Who I Am</h2>
+
+                <p class="km-body-text">
+                    I am a Business Systems Analyst at Guardian Life Limited and an Adjunct Lecturer
+                    at the University of the Commonwealth Caribbean (UCC), currently pursuing a
+                    Postgraduate Diploma in Education and Training at the Vocational Training
+                    Development Institute (VTDI). My teaching practice has taken me across four
+                    host institutions in Jamaica — EXCED, UCC, Rockfort Vocational Training Centre,
+                    and VTDI itself — where I have documented over 229 hours of teaching experience.
+                </p>
+
+                <p class="km-body-text">
+                    My professional background is rooted in Information Technology. I hold a
+                    Bachelor of Science in Information Technology and am currently pursuing a
+                    Master of Science at the University of the West Indies (UWI). This foundation
+                    allows me to bring real-world ICT knowledge into my teaching, making lessons
+                    relevant, practical, and connected to industry needs.
+                </p>
+
+                <p class="km-body-text">
+                    I am drawn to teaching because I believe that education — particularly in
+                    technology — has the power to open doors. I approach every classroom with
+                    the same curiosity and preparation I bring to my professional work, and I am
+                    committed to growing as an educator throughout this programme and beyond.
+                </p>
+
+                <!-- Quick facts — key details in a clean grid -->
+                <div class="km-quick-facts mt-4">
+                    <div class="km-fact">
+                        <span class="km-fact-label">Programme</span>
+                        <span class="km-fact-value">Postgraduate Diploma in Education &amp; Training</span>
+                    </div>
+                    <div class="km-fact">
+                        <span class="km-fact-label">Institution</span>
+                        <span class="km-fact-value">Vocational Training Development Institute (VTDI)</span>
+                    </div>
+                    <div class="km-fact">
+                        <span class="km-fact-label">Student ID</span>
+                        <span class="km-fact-value">2301010687</span>
+                    </div>
+                    <div class="km-fact">
+                        <span class="km-fact-label">Specialisation</span>
+                        <span class="km-fact-value">Information Technology</span>
+                    </div>
+                    <div class="km-fact">
+                        <span class="km-fact-label">Location</span>
+                        <span class="km-fact-value">Kingston, Jamaica</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     ACADEMIC BACKGROUND — Timeline style
+     Thin left border with dots marks each qualification.
+     This is a pure CSS timeline — no JS needed.
+============================================================ -->
+<section class="km-section km-section--ivory">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <!-- mx-auto centres the column when it doesn't fill full width -->
+
+                <p class="km-section-label">Education</p>
+                <h2 class="km-section-heading">Academic Background</h2>
+
+                <div class="km-timeline">
+
+                    <div class="km-timeline-item">
+                        <div class="km-timeline-dot"></div>
+                        <div class="km-timeline-period">2023 – Present</div>
+                        <div class="km-timeline-role">Postgraduate Diploma in Education and Training</div>
+                        <div class="km-timeline-inst">Vocational Training Development Institute (VTDI)</div>
+                        <p class="km-timeline-desc">
+                            Developing competency as a teaching professional through structured teaching
+                            practice placements, lesson planning, reflective practice, and evidence-based
+                            portfolio development.
+                        </p>
+                    </div>
+
+                    <div class="km-timeline-item">
+                        <div class="km-timeline-dot"></div>
+                        <div class="km-timeline-period">Current</div>
+                        <div class="km-timeline-role">Master of Science — Information Technology</div>
+                        <div class="km-timeline-inst">University of the West Indies (UWI)</div>
+                        <p class="km-timeline-desc">
+                            Advanced study in information technology, complementing my undergraduate
+                            foundation and informing my approach to teaching ICT at the tertiary level.
+                        </p>
+                    </div>
+
+                    <div class="km-timeline-item">
+                        <div class="km-timeline-dot"></div>
+                        <div class="km-timeline-period">Completed</div>
+                        <div class="km-timeline-role">Bachelor of Science — Information Technology</div>
+                        <div class="km-timeline-inst">University of the Commonwealth Caribbean (UCC)</div>
+                        <p class="km-timeline-desc">
+                            Undergraduate foundation in information systems, networking, databases,
+                            and software applications — the basis of all courses I have taught.
+                        </p>
+                    </div>
+
+                </div><!-- end timeline -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     TEACHING EXPERIENCE — Summary of placements
+     Four cards, one per institution.
+     Bootstrap row with col-md-6 gives 2 per row on tablet+.
+============================================================ -->
+<section class="km-section km-section--white" id="experience">
+    <div class="container">
+
+        <p class="km-section-label">Teaching Practice</p>
+        <h2 class="km-section-heading">Teaching Experience</h2>
+
+        <div class="row g-4">
+
+            <!-- EXCED -->
+            <div class="col-md-6">
+                <div class="km-exp-card">
+                    <div class="km-exp-header">
+                        <div class="km-exp-period">Sep – Nov 2024</div>
+                        <div class="km-exp-hrs">30 hrs</div>
+                    </div>
+                    <h3 class="km-exp-role">Lab Instructor</h3>
+                    <div class="km-exp-course">Fundamentals of Information Technology</div>
+                    <div class="km-exp-inst">Excelsior Community College (EXCED)</div>
+                    <p class="km-exp-desc">
+                        Led the laboratory component of the FIT course for approximately 50
+                        undergraduate students, covering Microsoft Access across three teaching weeks.
+                    </p>
+                    <div class="km-exp-tags">
+                        <span class="km-exp-tag">Microsoft Access</span>
+                        <span class="km-exp-tag">~50 Students</span>
+                        <span class="km-exp-tag">Thu &amp; Fri evenings</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UCC TP1 -->
+            <div class="col-md-6">
+                <div class="km-exp-card">
+                    <div class="km-exp-header">
+                        <div class="km-exp-period">Sep – Nov 2024 (TP1)</div>
+                        <div class="km-exp-hrs">36 hrs</div>
+                    </div>
+                    <h3 class="km-exp-role">Student Teacher</h3>
+                    <div class="km-exp-course">Computer Information Essentials (ITT107)</div>
+                    <div class="km-exp-inst">University of the Commonwealth Caribbean — Online</div>
+                    <p class="km-exp-desc">
+                        Delivered lectures and facilitated observation sessions for BSc IT students
+                        covering infrastructure, software, file systems, and assessment administration.
+                    </p>
+                    <div class="km-exp-tags">
+                        <span class="km-exp-tag">CIE ITT107</span>
+                        <span class="km-exp-tag">Online</span>
+                        <span class="km-exp-tag">Mondays 5:30–8:30PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rockfort VTC -->
+            <div class="col-md-6">
+                <div class="km-exp-card">
+                    <div class="km-exp-header">
+                        <div class="km-exp-period">Jan – Apr 2025</div>
+                        <div class="km-exp-hrs">40 hrs</div>
+                    </div>
+                    <h3 class="km-exp-role">Student Teacher</h3>
+                    <div class="km-exp-course">Carry Out Data Entry &amp; Retrieval (ITICOR0011A)</div>
+                    <div class="km-exp-inst">Rockfort Vocational Training Centre, HEART/NSTA</div>
+                    <p class="km-exp-desc">
+                        Taught two separate streams — Construction and Administrative Assistance Level 3 —
+                        covering Word, Excel, and PowerPoint. VTDI evaluation score: 95.6%.
+                    </p>
+                    <div class="km-exp-tags">
+                        <span class="km-exp-tag">Word · Excel · PowerPoint</span>
+                        <span class="km-exp-tag">2 Streams</span>
+                        <span class="km-exp-tag">95.6% Evaluation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VTDI ED109 -->
+            <div class="col-md-6">
+                <div class="km-exp-card">
+                    <div class="km-exp-header">
+                        <div class="km-exp-period">Jan – Apr 2025</div>
+                        <div class="km-exp-hrs">45 hrs</div>
+                    </div>
+                    <h3 class="km-exp-role">Student Teacher</h3>
+                    <div class="km-exp-course">Introduction to ICT for Educators (ED109)</div>
+                    <div class="km-exp-inst">Vocational Training Development Institute (VTDI)</div>
+                    <p class="km-exp-desc">
+                        Co-facilitated online sessions for B.Ed. in Applied Technology students covering
+                        digital citizenship, presentation software, word processing, and spreadsheets.
+                    </p>
+                    <div class="km-exp-tags">
+                        <span class="km-exp-tag">ED109</span>
+                        <span class="km-exp-tag">Online</span>
+                        <span class="km-exp-tag">Wednesdays 5:30–8:30PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UCC TP2 -->
+            <div class="col-md-6">
+                <div class="km-exp-card">
+                    <div class="km-exp-header">
+                        <div class="km-exp-period">Sep 2025 – Apr 2026 (TP2)</div>
+                        <div class="km-exp-hrs">78 hrs</div>
+                    </div>
+                    <h3 class="km-exp-role">Lecturer</h3>
+                    <div class="km-exp-course">Computer Information Essentials (ITT107)</div>
+                    <div class="km-exp-inst">University of the Commonwealth Caribbean — Online</div>
+                    <p class="km-exp-desc">
+                        Delivered full semester instruction across two semesters including two make-up
+                        sessions. All lectures and practical sessions covered. VTDI evaluation: 93%.
+                    </p>
+                    <div class="km-exp-tags">
+                        <span class="km-exp-tag">CIE ITT107</span>
+                        <span class="km-exp-tag">26 Sessions</span>
+                        <span class="km-exp-tag">93% Evaluation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hours total card -->
+            <div class="col-md-6">
+                <div class="km-exp-card km-exp-card--highlight">
+                    <div class="km-exp-total-num">229+</div>
+                    <div class="km-exp-total-label">Total Teaching Hours</div>
+                    <div class="km-exp-total-sub">
+                        Across 4 institutions · 2 academic years ·<br>
+                        Exceeds VTDI 164-hour requirement
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end row -->
+    </div>
+</section>
+
+
+<!-- ============================================================
+     PROFESSIONAL DEVELOPMENT — What else you're doing to grow
+============================================================ -->
+<section class="km-section km-section--ivory" id="development">
+    <div class="container">
+        <div class="col-lg-10 mx-auto">
+
+            <p class="km-section-label">Growth</p>
+            <h2 class="km-section-heading">Professional Development</h2>
+
+            <div class="km-dev-list">
+
+                <div class="km-dev-item">
+                    <div class="km-dev-icon">&#9632;</div>
+                    <div>
+                        <div class="km-dev-title">MSc in Information Technology — UWI</div>
+                        <div class="km-dev-desc">
+                            Advanced academic study in IT running concurrently with teaching practice,
+                            strengthening content knowledge for ICT instruction.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="km-dev-item">
+                    <div class="km-dev-icon">&#9632;</div>
+                    <div>
+                        <div class="km-dev-title">Adjunct Lecturing — UCC</div>
+                        <div class="km-dev-desc">
+                            Practical teaching experience at tertiary level, delivering Computer
+                            Information Essentials to BSc IT students across multiple semesters.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="km-dev-item">
+                    <div class="km-dev-icon">&#9632;</div>
+                    <div>
+                        <div class="km-dev-title">Business Systems Analysis — Guardian Life Limited</div>
+                        <div class="km-dev-desc">
+                            Professional industry experience informing real-world examples used in
+                            lessons — connecting classroom theory to workplace application.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="km-dev-item">
+                    <div class="km-dev-icon">&#9632;</div>
+                    <div>
+                        <div class="km-dev-title">5E Instructional Model — Applied Practice</div>
+                        <div class="km-dev-desc">
+                            Consistent application of the Engage, Explore, Explain, Elaborate, Evaluate
+                            framework across all teaching placements, deepening instructional design skills.
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end dev list -->
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER — Identical on every page
+============================================================ -->
+<footer class="km-footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <div class="km-footer-brand">Mr. Kemati Morgan &nbsp;&middot;&nbsp; Teaching Portfolio</div>
+        <div class="km-footer-links">
+            <a href="mailto:kematimorgan@gmail.com">kematimorgan@gmail.com</a>
+            <a href="https://www.linkedin.com/in/kemati-morgan-668386b2/" target="_blank">LinkedIn</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="km-footer-copy">
+            VTDI Postgraduate Diploma in Education &amp; Training &nbsp;&middot;&nbsp; 2024–2026
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS — always at the bottom of body -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
