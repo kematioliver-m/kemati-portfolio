@@ -1,0 +1,618 @@
+/*
+  ============================================================
+  Kemati Morgan — Teaching Portfolio
+  css/style.css — Custom Styles
+  ============================================================
+  This file overrides and extends Bootstrap with our brand kit.
+
+  ORGANISATION:
+  1. CSS Variables  — brand colours, fonts, spacing
+  2. Base / Reset   — global defaults
+  3. Navbar         — fixed top navigation
+  4. Hero           — full-screen opening section
+  5. Intro          — two-column philosophy + overview
+  6. Cards          — portfolio section cards
+  7. Evaluation     — score banner with progress bars
+  8. Footer         — bottom bar
+  9. Utilities      — reusable text and link styles
+  10. Responsive    — mobile adjustments
+  ============================================================
+*/
+
+
+/* ── 1. CSS VARIABLES ────────────────────────────────────────
+   CSS custom properties (variables) let us define our brand
+   colours and fonts once, then reuse them everywhere.
+   If the brand changes, we only update this section.
+────────────────────────────────────────────────────────────── */
+:root {
+    /* Brand colours — from the brand kit */
+    --km-white:       #FFFFFF;
+    --km-ivory:       #F8F6F1;   /* Soft Ivory — main background */
+    --km-charcoal:    #222222;   /* Deep Charcoal — primary text */
+    --km-slate:       #555555;   /* Slate Gray — secondary text */
+    --km-navy:        #243B53;   /* Muted Navy — headings, structure */
+    --km-gold:        #B08D57;   /* Warm Gold — accents, labels */
+    --km-gold-light:  #F3E8D0;   /* Light gold — backgrounds */
+    --km-border:      #E0DAD0;   /* Subtle border colour */
+
+    /* Typography — brand kit fonts */
+    --km-font-heading: 'Cormorant Garamond', Georgia, serif;  /* H1, H2 */
+    --km-font-body:    'Libre Baskerville', Georgia, serif;   /* paragraphs */
+    --km-font-ui:      'Helvetica Neue', Arial, sans-serif;   /* nav, labels, buttons */
+
+    /* Spacing — consistent padding values */
+    --km-section-py:  80px;   /* vertical padding for sections */
+}
+
+
+/* ── 2. BASE / RESET ─────────────────────────────────────────
+   Global defaults that apply to all elements.
+   box-sizing: border-box makes sizing more predictable —
+   padding and border are included in an element's total width.
+────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling when clicking anchor links */
+}
+
+body {
+    font-family: var(--km-font-body);
+    background-color: var(--km-ivory);
+    color: var(--km-charcoal);
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased; /* Sharper text on Mac/iOS */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--km-font-heading);
+    color: var(--km-navy);
+}
+
+
+/* ── 3. NAVBAR ───────────────────────────────────────────────
+   Fixed to the top of the page so it stays visible on scroll.
+   Uses our navy colour with gold accent on hover.
+────────────────────────────────────────────────────────────── */
+.km-navbar {
+    background-color: var(--km-navy);
+    padding: 0 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Brand name — left side of navbar */
+.km-navbar-brand {
+    font-family: var(--km-font-heading);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9) !important; /* !important overrides Bootstrap default */
+    letter-spacing: 0.02em;
+}
+
+/* Nav links */
+.km-navbar .nav-link {
+    font-family: var(--km-font-ui);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6) !important;
+    padding: 1.2rem 0.9rem !important;
+    transition: color 0.2s ease; /* Smooth colour change on hover */
+}
+
+.km-navbar .nav-link:hover,
+.km-navbar .nav-link.active {
+    color: var(--km-gold) !important;
+}
+
+/* Mobile hamburger icon — make it visible on dark background */
+.km-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.km-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.7)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* ── 4. HERO ─────────────────────────────────────────────────
+   Full-viewport-height opening section.
+   min-height: 100vh = at least as tall as the browser window.
+   padding-top: accounts for the fixed navbar height (~60px).
+   Content sits at the bottom using flexbox justify-content-end.
+────────────────────────────────────────────────────────────── */
+.km-hero {
+    min-height: 100vh;
+    background-color: var(--km-navy);
+    padding-top: 80px;
+    padding-bottom: 72px;
+
+    /* Subtle radial gradient overlays for depth — purely decorative */
+    background-image:
+            radial-gradient(ellipse 60% 50% at 80% 10%, rgba(176, 141, 87, 0.12) 0%, transparent 60%),
+            radial-gradient(ellipse 40% 40% at 10% 90%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+}
+
+/* Small label above the name */
+.km-eyebrow {
+    font-family: var(--km-font-ui);
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    margin-bottom: 1rem;
+
+    /* Gold line before the text using a pseudo-element */
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.km-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background-color: var(--km-gold);
+}
+
+/* Main name — Cormorant Garamond, large and italic on surname */
+.km-hero-name {
+    font-family: var(--km-font-heading);
+    font-size: clamp(3rem, 8vw, 6rem); /* clamp: scales between min and max based on viewport */
+    font-weight: 700;
+    color: var(--km-white);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+.km-hero-name em {
+    color: var(--km-gold);
+    font-style: italic;
+}
+
+/* Subtitle text below name */
+.km-hero-subtitle {
+    font-family: var(--km-font-ui);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 560px;
+    margin-bottom: 1.5rem;
+}
+
+/* Course tag pills */
+.km-tags {
+    display: flex;
+    flex-wrap: wrap; /* Wraps to next line if no space */
+    gap: 8px;
+}
+.km-tag {
+    font-family: var(--km-font-ui);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 5px 14px;
+    border-radius: 2px;
+}
+
+/* Stats row — divider line above */
+.km-stats {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.km-stat-num {
+    font-family: var(--km-font-heading);
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--km-white);
+    line-height: 1;
+}
+.km-stat-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 4px;
+}
+
+
+/* ── 5. INTRO SECTION ────────────────────────────────────────
+   White background, two columns.
+   Left: bordered quote. Right: body text and link.
+────────────────────────────────────────────────────────────── */
+.km-intro {
+    background-color: var(--km-white);
+    padding: var(--km-section-py) 0;
+}
+
+/* Section label — small gold uppercase text above headings */
+.km-section-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Section heading — Cormorant Garamond */
+.km-section-heading {
+    font-family: var(--km-font-heading);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--km-navy);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+/* Blockquote — left border, italic Baskerville */
+.km-quote {
+    font-family: var(--km-font-body);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--km-slate);
+    border-left: 2px solid var(--km-navy);
+    padding-left: 1.25rem;
+    margin: 0;
+    line-height: 1.85;
+}
+
+/* Right column has top padding to align with heading on left */
+.km-intro-right {
+    padding-top: 2rem;
+}
+
+.km-body-text {
+    font-family: var(--km-font-body);
+    font-size: 0.92rem;
+    color: var(--km-slate);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+}
+
+/* Text link — underline style matching brand */
+.km-text-link {
+    font-family: var(--km-font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--km-navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--km-navy);
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.km-text-link:hover {
+    color: var(--km-gold);
+    border-color: var(--km-gold);
+}
+
+
+/* ── 6. CARDS SECTION ────────────────────────────────────────
+   Evan Andersson-inspired card grid.
+   Each card has an image area + body with category, title,
+   description, and "Learn more" link.
+   Cards sit flush against each other (g-0 = no gutters).
+────────────────────────────────────────────────────────────── */
+.km-cards-section {
+    background-color: var(--km-ivory);
+    padding: var(--km-section-py) 0;
+}
+
+/* Section header with decorative large number */
+.km-section-header {
+    border-bottom: 1px solid var(--km-border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 0; /* Cards sit right below with no gap */
+}
+.km-section-count {
+    font-family: var(--km-font-heading);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--km-border); /* Very faint — decorative only */
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+/* Individual card — the <a> tag is the card itself */
+.km-card {
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    border: 1px solid var(--km-border);
+    border-top: none; /* Avoid double borders between rows */
+    background-color: var(--km-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+.km-card:hover {
+    transform: translateY(-3px); /* Subtle lift on hover */
+    box-shadow: 0 8px 30px rgba(36, 59, 83, 0.08);
+    z-index: 2;
+}
+
+/* Card image area — coloured gradient placeholder
+   aspect-ratio: 16/9 keeps a consistent rectangular shape */
+.km-card-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Large faint initials in the image area — decorative */
+.km-card-initials {
+    font-family: var(--km-font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.08);
+    letter-spacing: -0.04em;
+    user-select: none; /* Can't be selected/copied */
+}
+
+/* Different gradient for each card — using navy and related tones */
+.km-card-img--about        { background: linear-gradient(135deg, #0F2B1E 0%, #243B53 100%); }
+.km-card-img--philosophy   { background: linear-gradient(135deg, #243B53 0%, #3A5F7A 100%); }
+.km-card-img--experience   { background: linear-gradient(135deg, #1A2B1A 0%, #2D4A2D 100%); }
+.km-card-img--evidence     { background: linear-gradient(135deg, #1A2B2B 0%, #243B53 100%); }
+.km-card-img--activities   { background: linear-gradient(135deg, #2B1A0F 0%, #B08D57 100%); }
+.km-card-img--reflections  { background: linear-gradient(135deg, #2B2010 0%, #8B6D3A 100%); }
+.km-card-img--assessments  { background: linear-gradient(135deg, #1A1A2B 0%, #3A3A6B 100%); }
+.km-card-img--development  { background: linear-gradient(135deg, #0F2020 0%, #243B53 100%); }
+
+/* Card body — text content below image */
+.km-card-body {
+    padding: 1.6rem 1.75rem 1.9rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--km-border);
+}
+
+.km-card-category {
+    font-family: var(--km-font-ui);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.km-card-title {
+    font-family: var(--km-font-heading);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--km-navy);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.km-card-desc {
+    font-family: var(--km-font-body);
+    font-size: 0.85rem;
+    color: var(--km-slate);
+    line-height: 1.75;
+    flex: 1; /* Pushes the link to the bottom */
+    margin-bottom: 1.25rem;
+}
+
+/* "Learn more" link at bottom of card */
+.km-card-link {
+    font-family: var(--km-font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--km-navy);
+    transition: color 0.2s ease;
+}
+.km-card:hover .km-card-link {
+    color: var(--km-gold);
+}
+
+
+/* ── 7. EVALUATION SECTION ───────────────────────────────────
+   Dark navy banner showing the VTDI evaluation score.
+   Two columns: big score on left, details and bars on right.
+────────────────────────────────────────────────────────────── */
+.km-eval-section {
+    background-color: var(--km-white);
+    padding: var(--km-section-py) 0;
+}
+
+.km-eval-banner {
+    background-color: var(--km-navy);
+    padding: 3rem 3.5rem;
+    display: grid;
+    /* Two columns: auto (score) and 1fr (details take remaining space) */
+    grid-template-columns: auto 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+/* Big score number */
+.km-eval-score {
+    font-family: var(--km-font-heading);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--km-white);
+    line-height: 1;
+    white-space: nowrap;
+}
+.km-eval-score span {
+    font-size: 2.5rem;
+    color: var(--km-gold);
+}
+
+/* Details — right side */
+.km-eval-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    margin-bottom: 0.4rem;
+}
+.km-eval-title {
+    font-family: var(--km-font-heading);
+    font-size: 1.4rem;
+    color: var(--km-white);
+    margin-bottom: 0.4rem;
+}
+.km-eval-meta {
+    font-family: var(--km-font-ui);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* Progress bars container */
+.km-eval-bars {
+    display: grid;
+    gap: 8px;
+}
+
+/* Each bar row: label | bar | value */
+.km-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--km-font-ui);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+.km-bar-label {
+    min-width: 160px;
+}
+/* Bar background track */
+.km-bar-bg {
+    flex: 1;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+/* Gold fill — width set via inline style in HTML */
+.km-bar-fill {
+    height: 100%;
+    background-color: var(--km-gold);
+    border-radius: 2px;
+}
+.km-bar-val {
+    min-width: 48px;
+    text-align: right;
+    color: var(--km-white);
+    font-weight: 600;
+}
+
+
+/* ── 8. FOOTER ───────────────────────────────────────────────
+   Simple bottom bar with navy background.
+   Three items: brand name, links, copyright.
+────────────────────────────────────────────────────────────── */
+.km-footer {
+    background-color: var(--km-navy);
+    padding: 1.6rem 0;
+    margin-top: 0;
+}
+
+.km-footer-brand {
+    font-family: var(--km-font-heading);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.km-footer-links {
+    display: flex;
+    gap: 24px;
+}
+.km-footer-links a {
+    font-family: var(--km-font-ui);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+}
+.km-footer-links a:hover {
+    color: var(--km-gold);
+}
+
+.km-footer-copy {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.04em;
+}
+
+
+/* ── 9. UTILITIES ────────────────────────────────────────────
+   Reusable helper classes you can add to any element.
+────────────────────────────────────────────────────────────── */
+
+/* Add top padding to body to offset the fixed navbar */
+body {
+    padding-top: 60px;
+}
+
+
+/* ── 10. RESPONSIVE ──────────────────────────────────────────
+   Media queries adjust layout for smaller screens.
+   max-width: 768px targets tablets and phones.
+   We reduce font sizes, switch from grid to single column,
+   and adjust padding to keep things readable on mobile.
+────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    :root {
+        --km-section-py: 56px; /* Less vertical padding on mobile */
+    }
+
+    /* Hero adjustments */
+    .km-hero {
+        padding-bottom: 48px;
+    }
+    .km-hero-name {
+        font-size: 3rem;
+    }
+    .km-stats {
+        gap: 1.5rem !important;
+    }
+
+    /* Evaluation banner stacks vertically on mobile */
+    .km-eval-banner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+    .km-eval-score {
+        font-size: 3.5rem;
+    }
+
+    /* Footer stacks vertically */
+    .km-footer .d-flex {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    .km-footer-links {
+        justify-content: center;
+    }
+
+    /* Bar labels shorten on small screens */
+    .km-bar-label {
+        min-width: 100px;
+        font-size: 0.62rem;
+    }
+
+}

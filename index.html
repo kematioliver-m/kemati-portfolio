@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  Kemati Morgan — Teaching Portfolio
+  index.html — Home Page
+  ============================================================
+  STRUCTURE:
+  1. <head>        — meta info, fonts, Bootstrap, custom CSS
+  2. <nav>         — fixed top navigation bar
+  3. <header>      — hero section (name, title, stats)
+  4. <section>     — introduction / about snippet
+  5. <section>     — portfolio cards (Evan Andersson-inspired)
+  6. <section>     — evaluation highlight
+  7. <footer>      — contact links and copyright
+  ============================================================
+-->
+<html lang="en">
+
+<head>
+    <!-- Character encoding — tells the browser to use UTF-8 (supports all characters) -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport — makes the site scale correctly on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title — appears on the browser tab -->
+    <title>Mr. Kemati Morgan | Teaching Portfolio</title>
+
+    <!-- ── GOOGLE FONTS ──────────────────────────────────────
+         We load three fonts matching the brand kit:
+         - Cormorant Garamond : elegant serif for headings (H1, H2)
+         - Libre Baskerville  : readable serif for body text
+         - We use Helvetica Neue via CSS (system font, no import needed)
+    ─────────────────────────────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- ── BOOTSTRAP 5 ───────────────────────────────────────
+         Bootstrap gives us a responsive grid system, navbar,
+         cards, and utility classes. We load it from a CDN
+         (Content Delivery Network) so no installation needed.
+    ─────────────────────────────────────────────────────── -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ── CUSTOM STYLES ─────────────────────────────────────
+         Our own CSS file — loaded AFTER Bootstrap so our rules
+         override Bootstrap's defaults where needed.
+    ─────────────────────────────────────────────────────── -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAV — Fixed top navigation bar
+     Bootstrap class breakdown:
+     - navbar              : marks this as a Bootstrap navbar
+     - navbar-expand-lg   : collapses into hamburger on small screens
+     - fixed-top          : sticks to the top of the page on scroll
+============================================================ -->
+<nav class="navbar navbar-expand-lg fixed-top km-navbar">
+
+    <div class="container">
+
+        <!-- Brand name — links back to home -->
+        <a class="navbar-brand km-navbar-brand" href="index.html">Mr. Kemati Morgan</a>
+
+        <!-- Hamburger button — only visible on mobile screens
+             data-bs-toggle and data-bs-target are Bootstrap JS attributes
+             that control showing/hiding the nav links on small screens -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav links — collapse on mobile, expand on large screens -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="philosophy.html">Philosophy</a></li>
+                <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="lesson-plans.html">Lesson Plans</a></li>
+                <li class="nav-item"><a class="nav-link" href="assessments.html">Assessments</a></li>
+                <li class="nav-item"><a class="nav-link" href="artefacts.html">Artefacts</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav><!-- end nav -->
+
+
+<!-- ============================================================
+     HERO — Full-screen opening section
+     This is the first thing visitors see — name, title, key stats.
+     Inspired by Patrick Manser's strong hero approach.
+============================================================ -->
+<header class="km-hero">
+    <div class="container h-100 d-flex flex-column justify-content-end">
+
+        <!-- Small label above the name — subtle, uppercase, gold -->
+        <p class="km-eyebrow">Teaching Portfolio</p>
+
+        <!-- Main name heading — Cormorant Garamond, large -->
+        <h1 class="km-hero-name">Kemati <em>Morgan</em></h1>
+
+        <!-- Subtitle — role and institution -->
+        <p class="km-hero-subtitle">
+            Postgraduate Diploma in Education &amp; Training &nbsp;&middot;&nbsp; VTDI
+            &nbsp;&middot;&nbsp; Adjunct Lecturer, UCC &nbsp;&middot;&nbsp; Kingston, Jamaica
+        </p>
+
+        <!-- Course tags — small bordered labels -->
+        <div class="km-tags mb-5">
+            <span class="km-tag">ITT107 Computer Information Essentials</span>
+            <span class="km-tag">Data Operations &middot; HEART/NSTA</span>
+            <span class="km-tag">Fundamentals of Information Technology</span>
+            <span class="km-tag">Intro to ICT for Educators</span>
+        </div>
+
+        <!-- Stats row — key numbers at a glance -->
+        <!-- Bootstrap's d-flex and gap utility classes handle spacing -->
+        <div class="km-stats d-flex flex-wrap gap-5 pt-4">
+            <div class="km-stat">
+                <div class="km-stat-num">229+</div>
+                <div class="km-stat-label">Hours Documented</div>
+            </div>
+            <div class="km-stat">
+                <div class="km-stat-num">4</div>
+                <div class="km-stat-label">Host Institutions</div>
+            </div>
+            <div class="km-stat">
+                <div class="km-stat-num">95.6%</div>
+                <div class="km-stat-label">VTDI Evaluation Score</div>
+            </div>
+            <div class="km-stat">
+                <div class="km-stat-num">5E</div>
+                <div class="km-stat-label">Instructional Model</div>
+            </div>
+        </div>
+
+    </div>
+</header><!-- end hero -->
+
+
+<!-- ============================================================
+     INTRO — Two-column introduction section
+     Left: teaching philosophy quote
+     Right: portfolio purpose paragraph + link
+     Bootstrap's row and col classes create the two-column grid.
+     col-lg-6 means each column takes half the width on large screens.
+============================================================ -->
+<section class="km-intro">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+
+            <!-- Left column — philosophy quote -->
+            <div class="col-lg-6">
+                <p class="km-section-label">Teaching Philosophy</p>
+                <h2 class="km-section-heading">Theory Put Into Practice</h2>
+                <!-- blockquote — semantic HTML for quoted content -->
+                <blockquote class="km-quote">
+                    "I believe that effective teaching bridges theory and real-world application.
+                    My approach centres on structured, student-focused delivery using the 5E model —
+                    engaging learners through relevant scenarios, guiding exploration, and fostering
+                    the confidence to apply skills independently."
+                </blockquote>
+            </div>
+
+            <!-- Right column — portfolio overview -->
+            <div class="col-lg-6 km-intro-right">
+                <p class="km-section-label">About This Portfolio</p>
+                <p class="km-body-text">
+                    This portfolio documents my teaching practice journey through the VTDI
+                    Postgraduate Diploma in Education &amp; Training. It presents evidence of
+                    growth as a teaching professional across four host institutions, covering
+                    planning, delivery, assessment, and reflection.
+                </p>
+                <p class="km-body-text">
+                    Each section is organised to meet the requirements of the VTDI portfolio rubric,
+                    demonstrating competence across a range of instructional contexts — from TVET
+                    classrooms to online undergraduate delivery.
+                </p>
+                <a href="about.html" class="km-text-link">Learn more about me &rarr;</a>
+            </div>
+
+        </div>
+    </div>
+</section><!-- end intro -->
+
+
+<!-- ============================================================
+     PORTFOLIO CARDS — Main navigation cards
+     Inspired directly by Evan Axel Andersson's portfolio page.
+     Each card links to a portfolio section with an image,
+     category label, title, description, and "Learn more" link.
+
+     Bootstrap grid: row-cols-1 = 1 card per row on mobile
+                     row-cols-md-2 = 2 cards per row on medium screens
+============================================================ -->
+<section class="km-cards-section">
+    <div class="container">
+
+        <!-- Section header with counter -->
+        <div class="km-section-header d-flex align-items-end justify-content-between">
+            <div>
+                <p class="km-section-label">Portfolio Sections</p>
+                <h2 class="km-section-heading mb-0">Teaching Portfolio</h2>
+            </div>
+            <!-- Large decorative number — purely visual -->
+            <span class="km-section-count">08</span>
+        </div>
+
+        <!-- Card grid -->
+        <div class="row row-cols-1 row-cols-md-2 g-0">
+
+            <!-- ── CARD 1: About Me ── -->
+            <div class="col">
+                <a href="about.html" class="km-card text-decoration-none">
+                    <!-- Card image area — background colour used as placeholder -->
+                    <div class="km-card-img km-card-img--about">
+                        <!-- Decorative initials — faint large letters in background -->
+                        <span class="km-card-initials">AM</span>
+                    </div>
+                    <div class="km-card-body">
+                        <p class="km-card-category">Profile &amp; Identity</p>
+                        <h3 class="km-card-title">About Me</h3>
+                        <p class="km-card-desc">
+                            My educational journey, professional background, and the experiences
+                            that shaped my approach to teaching in technology and vocational education.
+                        </p>
+                        <span class="km-card-link">Learn more &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ── CARD 2: Teaching Philosophy ── -->
+            <div class="col">
+                <a href="philosophy.html" class="km-card text-decoration-none">
+                    <div class="km-card-img km-card-img--philosophy">
+                        <span class="km-card-initials">TP</span>
+                    </div>
+                    <div class="km-card-body">
+                        <p class="km-card-category">Profile &amp; Identity</p>
+                        <h3 class="km-card-title">Teaching Philosophy</h3>
+                        <p class="km-card-desc">
+                            My beliefs about learning, student engagement, and the use of the 5E
+                            instructional model to create structured, student-centred lessons.
+                        </p>
+                        <span class="km-card-link">Learn more &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ── CARD 3: Experience & Lesson Plans ── -->
+            <div class="col">
+                <a href="experience.html" class="km-card text-decoration-none">
+                    <div class="km-card-img km-card-img--experience">
+                        <span class="km-card-initials">LP</span>
+                    </div>
+                    <div class="km-card-body">
+                        <p class="km-card-category">Teaching Evidence</p>
+                        <h3 class="km-card-title">Lesson Plans</h3>
+                        <p class="km-card-desc">
+                            A curated collection of lesson plans across all placements — Microsoft
+                            Access, Word, Excel, PowerPoint, Operating Systems, and CIE — each
+                            written to VTDI standards using the 5E model.
+                        </p>
+                        <span class="km-card-link">Learn more &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ── CARD 4: Teaching Practice Evidence ── -->
+            <div class="col">
+                <a href="artefacts.html" class="km-card text-decoration-none">
+                    <div class="km-card-img km-card-img--evidence">
+                        <span class="km-card-initials">TE</span>
+                    </div>
+                    <div class="km-card-body">
+                        <p class="km-card-category">Teaching Evidence</p>
+                        <h3 class="km-card-title">Teaching Practice Evidence</h3>
+                        <p class="km-card-desc">
+                            Signed timesheets, evaluation forms, and placement records documenting
+                            229+ hours of teaching practice across EXCED, UCC, Rockfort VTC,
+                            and VTDI.
+                        </p>
+                        <span class="km-card-link">Learn more &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ── CARD 5: Classroom Activities ── -->
+            <div class="col">
+                <a href="assessments.html" class="km-card text-decoration-none">
+                    <div class="km-card-img km-card-img--activities">
+                        <span class="km-card-initials">CA</span>
+                    </div>
+                    <div class="km-card-body">
+                        <p class="km-card-category">Learning Materials</p>
+                        <h3 class="km-card-title">Classroom Activities &amp; Resources</h3>
+                        <p class="km-card-desc">
+                            Hands-on activities, lab instructions, worksheets, and teaching resources
+                            used across all placements — including the Excel data activity and
+                            Microsoft Word notes sent to students.
+                        </p>
+                        <span class="km-card-link">Learn more &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ── CARD 6: Reflective Journal ── -->
+            <div class="col">
+                <a href="experience.html#reflections" class="km-card text-decoration-none">
+                    <div class="km-card-img km-card-img--reflections">
+                        <span class="km-card-initials">RJ</span>
+                    </div>
+                    <div class="km-card-body">
+                        <p class="km-card-category">Reflection &amp; Growth</p>
+                        <h3 class="km-card-title">Reflective Journal</h3>
+                        <p class="km-card-desc">
+                            Honest reflections on each placement — what went well, what was
+                            challenging, how delivery improved, and how I grew as a teaching
+                            professional across two academic years.
+                        </p>
+                        <span class="km-card-link">Learn more &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ── CARD 7: Assessment Samples ── -->
+            <div class="col">
+                <a href="assessments.html#samples" class="km-card text-decoration-none">
+                    <div class="km-card-img km-card-img--assessments">
+                        <span class="km-card-initials">AS</span>
+                    </div>
+                    <div class="km-card-body">
+                        <p class="km-card-category">Assessment</p>
+                        <h3 class="km-card-title">Assessment Samples</h3>
+                        <p class="km-card-desc">
+                            Assessment rubrics, marked student work, and grading records — including
+                            the 14-student construction class assessment covering Word, Excel,
+                            and Internet skills.
+                        </p>
+                        <span class="km-card-link">Learn more &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ── CARD 8: Professional Development ── -->
+            <div class="col">
+                <a href="about.html#development" class="km-card text-decoration-none">
+                    <div class="km-card-img km-card-img--development">
+                        <span class="km-card-initials">PD</span>
+                    </div>
+                    <div class="km-card-body">
+                        <p class="km-card-category">Reflection &amp; Growth</p>
+                        <h3 class="km-card-title">Professional Development</h3>
+                        <p class="km-card-desc">
+                            Continuing education and professional activities alongside teaching
+                            practice — including the VTDI programme, UWI MSc, and adjunct
+                            lecturing at UCC.
+                        </p>
+                        <span class="km-card-link">Learn more &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+        </div><!-- end card grid -->
+    </div>
+</section><!-- end cards section -->
+
+
+<!-- ============================================================
+     EVALUATION HIGHLIGHT — VTDI score banner
+     Dark navy background, score prominently displayed,
+     with progress bars showing category breakdown.
+============================================================ -->
+<section class="km-eval-section">
+    <div class="container">
+        <div class="km-eval-banner">
+
+            <!-- Left: big score number -->
+            <div class="km-eval-score">
+                95.6<span>%</span>
+            </div>
+
+            <!-- Right: details and breakdown bars -->
+            <div class="km-eval-details">
+                <p class="km-eval-label">VTDI Student Teacher Evaluation — TP1</p>
+                <h3 class="km-eval-title">Data Operations: Using Presentation Software</h3>
+                <p class="km-eval-meta">
+                    Rockfort Vocational Training Centre &nbsp;&middot;&nbsp;
+                    Evaluator: Mr. Andrew C. Samuels &nbsp;&middot;&nbsp;
+                    March 24, 2025 &nbsp;&middot;&nbsp; Score: 258 / 270
+                </p>
+
+                <!-- Score breakdown bars
+                     Each bar uses inline style="width:XX%" to set fill amount.
+                     This is a simple technique — in a real app you'd use JS. -->
+                <div class="km-eval-bars">
+
+                    <div class="km-bar-row">
+                        <span class="km-bar-label">Quality of Planning</span>
+                        <div class="km-bar-bg">
+                            <div class="km-bar-fill" style="width: 94.5%"></div>
+                        </div>
+                        <span class="km-bar-val">52/55</span>
+                    </div>
+
+                    <div class="km-bar-row">
+                        <span class="km-bar-label">Organisation &amp; Delivery</span>
+                        <div class="km-bar-bg">
+                            <div class="km-bar-fill" style="width: 97.5%"></div>
+                        </div>
+                        <span class="km-bar-val">117/120</span>
+                    </div>
+
+                    <div class="km-bar-row">
+                        <span class="km-bar-label">Student Engagement</span>
+                        <div class="km-bar-bg">
+                            <div class="km-bar-fill" style="width: 96%"></div>
+                        </div>
+                        <span class="km-bar-val">24/25</span>
+                    </div>
+
+                    <div class="km-bar-row">
+                        <span class="km-bar-label">Professionalism</span>
+                        <div class="km-bar-bg">
+                            <div class="km-bar-fill" style="width: 100%"></div>
+                        </div>
+                        <span class="km-bar-val">35/35</span>
+                    </div>
+
+                    <div class="km-bar-row">
+                        <span class="km-bar-label">Practical Lesson</span>
+                        <div class="km-bar-bg">
+                            <div class="km-bar-fill" style="width: 94.3%"></div>
+                        </div>
+                        <span class="km-bar-val">33/35</span>
+                    </div>
+
+                </div><!-- end bars -->
+            </div><!-- end details -->
+
+        </div><!-- end eval banner -->
+    </div>
+</section><!-- end eval section -->
+
+
+<!-- ============================================================
+     FOOTER — Contact info and copyright
+============================================================ -->
+<footer class="km-footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+
+        <div class="km-footer-brand">Mr. Kemati Morgan &nbsp;&middot;&nbsp; Teaching Portfolio</div>
+
+        <!-- Contact links in footer -->
+        <div class="km-footer-links">
+            <a href="mailto:kematimorgan@gmail.com">kematimorgan@gmail.com</a>
+            <a href="https://www.linkedin.com/in/kemati-morgan-668386b2/" target="_blank">LinkedIn</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="km-footer-copy">
+            VTDI Postgraduate Diploma in Education &amp; Training &nbsp;&middot;&nbsp; 2024–2026
+        </div>
+
+    </div>
+</footer><!-- end footer -->
+
+
+<!-- ── BOOTSTRAP JS ──────────────────────────────────────────
+     Loaded at the BOTTOM of the body — best practice.
+     This enables interactive Bootstrap components like the
+     mobile hamburger menu toggle. The bundle version includes
+     Popper.js (needed for dropdowns and tooltips).
+─────────────────────────────────────────────────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Link to our own JS file — for any custom interactions -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
