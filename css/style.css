@@ -993,3 +993,240 @@ body {
     color: var(--km-slate);
     line-height: 1.75;
 }
+
+
+/* ============================================================
+   PHILOSOPHY PAGE STYLES
+   Append these to the bottom of style.css
+   ============================================================ */
+
+
+/* ── PHILOSOPHY STATEMENT ────────────────────────────────────
+   Large centred quote — the anchor of the philosophy page.
+   Cormorant Garamond italic for elegance.
+────────────────────────────────────────────────────────────── */
+
+/* Large decorative opening quotation mark */
+.km-quote-mark {
+    font-family: var(--km-font-heading);
+    font-size: 8rem;
+    line-height: 0.5;
+    color: var(--km-border);
+    margin-bottom: 1.5rem;
+    user-select: none; /* Can't be selected — it's decorative */
+}
+
+/* The main philosophy statement — large, italic, centred */
+.km-philosophy-statement {
+    font-family: var(--km-font-heading);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem); /* Scales with viewport */
+    font-style: italic;
+    font-weight: 400;
+    color: var(--km-navy);
+    line-height: 1.75;
+    margin: 0 0 1.5rem;
+    border: none; /* Override any blockquote defaults */
+    padding: 0;
+}
+
+/* Attribution line below the quote */
+.km-philosophy-attr {
+    font-family: var(--km-font-ui);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--km-slate);
+    margin: 0;
+}
+
+
+/* ── 5E MODEL CARDS ──────────────────────────────────────────
+   Five equal-width cards, one per E.
+   Each has a large letter, title, description, and example.
+   Different left border colour per E to distinguish them visually.
+────────────────────────────────────────────────────────────── */
+.km-5e-card {
+    border: 1px solid var(--km-border);
+    border-top: 3px solid var(--km-navy); /* Thick top accent bar */
+    padding: 1.75rem 1.5rem;
+    background-color: var(--km-white);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.km-5e-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(36, 59, 83, 0.08);
+}
+
+/* Different accent colour per E */
+.km-5e-card--engage    { border-top-color: #243B53; }
+.km-5e-card--explore   { border-top-color: #2D6A4F; }
+.km-5e-card--explain   { border-top-color: #B08D57; }
+.km-5e-card--elaborate { border-top-color: #6B4F8B; }
+.km-5e-card--evaluate  { border-top-color: #8B3A3A; }
+
+/* Large faint letter at top of card */
+.km-5e-letter {
+    font-family: var(--km-font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--km-border);
+    margin-bottom: 0.5rem;
+    user-select: none;
+}
+
+.km-5e-title {
+    font-family: var(--km-font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--km-navy);
+    margin-bottom: 0.75rem;
+}
+
+.km-5e-desc {
+    font-family: var(--km-font-body);
+    font-size: 0.82rem;
+    color: var(--km-slate);
+    line-height: 1.75;
+    flex: 1; /* Pushes example block to bottom */
+    margin-bottom: 1rem;
+}
+
+/* Example block at bottom of each card */
+.km-5e-example {
+    font-family: var(--km-font-ui);
+    font-size: 0.68rem;
+    color: var(--km-slate);
+    border-top: 1px solid var(--km-border);
+    padding-top: 0.75rem;
+    line-height: 1.6;
+}
+.km-5e-example-label {
+    color: var(--km-gold);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+}
+
+
+/* ── CORE BELIEFS ────────────────────────────────────────────
+   Three belief cards with a gold top accent line.
+────────────────────────────────────────────────────────────── */
+.km-belief-card {
+    padding: 2rem;
+    border: 1px solid var(--km-border);
+    background-color: var(--km-ivory);
+    height: 100%; /* Equal height within Bootstrap row */
+}
+
+/* Thin gold top accent bar */
+.km-belief-accent {
+    width: 32px;
+    height: 2px;
+    background-color: var(--km-gold);
+    margin-bottom: 1.25rem;
+}
+
+.km-belief-title {
+    font-family: var(--km-font-heading);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--km-navy);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.km-belief-text {
+    font-family: var(--km-font-body);
+    font-size: 0.85rem;
+    color: var(--km-slate);
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* ── NAVY SECTION ────────────────────────────────────────────
+   Dark background section — used sparingly for visual contrast.
+   All text colours need to be lightened for readability.
+────────────────────────────────────────────────────────────── */
+.km-section--navy {
+    background-color: var(--km-navy);
+    padding: var(--km-section-py) 0;
+}
+
+/* Light versions of section label and heading for dark background */
+.km-label--light {
+    color: var(--km-gold) !important;
+}
+.km-heading--light {
+    color: var(--km-white) !important;
+}
+
+/* Light version of blockquote for dark background */
+.km-quote--light {
+    font-family: var(--km-font-body);
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.65);
+    border-left: 2px solid var(--km-gold);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    line-height: 1.85;
+}
+
+/* Light attribution for dark background */
+.km-attr--light {
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+
+/* ── PRACTICE LIST ───────────────────────────────────────────
+   Numbered list showing how philosophy translates to practice.
+   Large gold number on the left, title and text on the right.
+────────────────────────────────────────────────────────────── */
+.km-practice-list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.km-practice-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    align-items: flex-start;
+}
+
+/* Large number */
+.km-practice-num {
+    font-family: var(--km-font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--km-gold);
+    line-height: 1;
+    min-width: 40px;
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+
+.km-practice-title {
+    font-family: var(--km-font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--km-white);
+    margin-bottom: 6px;
+}
+
+.km-practice-desc {
+    font-family: var(--km-font-body);
+    font-size: 0.83rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.75;
+    margin: 0;
+}
+

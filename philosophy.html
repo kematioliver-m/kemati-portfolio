@@ -1,10 +1,401 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+  Kemati Morgan — Teaching Portfolio
+  philosophy.html — Teaching Philosophy Page
+  ============================================================
+  STRUCTURE:
+  1. <head>     — meta, fonts, Bootstrap, stylesheet
+  2. <nav>      — fixed navbar (active: Philosophy)
+  3. <header>   — compact page hero
+  4. <section>  — philosophy statement (main quote)
+  5. <section>  — the 5E model breakdown
+  6. <section>  — core beliefs (student-centred, tech, inclusion)
+  7. <section>  — connection to practice (how beliefs show in teaching)
+  8. <footer>   — standard footer
+  ============================================================
+-->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Philosophy | Mr. Kemati Morgan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
+<!-- ============================================================
+     NAV — active link updated to Philosophy
+============================================================ -->
+<nav class="navbar navbar-expand-lg fixed-top km-navbar">
+    <div class="container">
+        <a class="navbar-brand km-navbar-brand" href="index.html">Mr. Kemati Morgan</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="philosophy.html">Philosophy</a></li>
+                <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="lesson-plans.html">Lesson Plans</a></li>
+                <li class="nav-item"><a class="nav-link" href="assessments.html">Assessments</a></li>
+                <li class="nav-item"><a class="nav-link" href="artefacts.html">Artefacts</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ============================================================
+     PAGE HERO — Compact navy banner
+============================================================ -->
+<header class="km-page-hero">
+    <div class="container">
+        <p class="km-eyebrow">
+            <a href="index.html" class="km-eyebrow-link">Portfolio</a>
+            &nbsp;&rarr;&nbsp; Teaching Philosophy
+        </p>
+        <h1 class="km-page-hero-title">Teaching Philosophy</h1>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     PHILOSOPHY STATEMENT — Full-width centred quote
+     This is the anchor of the page — the core belief statement.
+     A wide, generous blockquote in Cormorant Garamond.
+     Malan-style: text-first, spacious, authoritative.
+============================================================ -->
+<section class="km-section km-section--white">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <!-- col-lg-8 centres a readable column — not full width -->
+            <div class="col-lg-8 text-center">
+
+                <p class="km-section-label">Statement</p>
+
+                <!-- Large decorative opening quote mark — purely visual -->
+                <div class="km-quote-mark">&ldquo;</div>
+
+                <blockquote class="km-philosophy-statement">
+                    I believe that effective teaching bridges theory and real-world application.
+                    My approach centres on structured, student-focused delivery — engaging learners
+                    through relevant scenarios, guiding exploration, and fostering the confidence
+                    to apply skills independently. I aim to meet every learner where they are,
+                    differentiate instruction to accommodate diverse learning styles, and maintain
+                    an environment of mutual respect where curiosity is rewarded.
+                </blockquote>
+
+                <!-- Closing attribution -->
+                <p class="km-philosophy-attr">— Kemati Morgan, 2025</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     THE 5E MODEL — Core instructional framework
+     Five columns on desktop, stacks to 1 on mobile.
+     Each E has an icon letter, title, and description.
+
+     col-sm-6 col-lg = 2 per row on small, 5 on large screens.
+     We use col-lg to let Bootstrap divide 5 equally.
+============================================================ -->
+<section class="km-section km-section--ivory">
+    <div class="container">
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-7 text-center">
+                <p class="km-section-label">Instructional Framework</p>
+                <h2 class="km-section-heading">The 5E Model</h2>
+                <p class="km-body-text text-center">
+                    Every lesson I design follows the 5E instructional model — a research-based
+                    framework that structures learning as a progressive cycle. Each stage builds
+                    on the last, taking students from initial curiosity to confident application.
+                </p>
+            </div>
+        </div>
+
+        <!-- 5E cards — one per E -->
+        <!-- d-flex and flex-column ensure equal height cards -->
+        <div class="row g-3 justify-content-center">
+
+            <div class="col-sm-6 col-lg d-flex">
+                <div class="km-5e-card km-5e-card--engage flex-fill">
+                    <div class="km-5e-letter">E</div>
+                    <div class="km-5e-title">Engage</div>
+                    <p class="km-5e-desc">
+                        Capture student interest and surface prior knowledge. Connect the lesson
+                        to real-world scenarios — healthcare databases, retail data, workplace tools.
+                    </p>
+                    <div class="km-5e-example">
+                        <span class="km-5e-example-label">In practice:</span>
+                        Kahoot quizzes, essential questions, real-life scenarios
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg d-flex">
+                <div class="km-5e-card km-5e-card--explore flex-fill">
+                    <div class="km-5e-letter">E</div>
+                    <div class="km-5e-title">Explore</div>
+                    <p class="km-5e-desc">
+                        Students get hands-on with the concept. I step back and let them
+                        experiment, make mistakes, and discover how things work for themselves.
+                    </p>
+                    <div class="km-5e-example">
+                        <span class="km-5e-example-label">In practice:</span>
+                        Lab activities, guided discovery, peer collaboration
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg d-flex">
+                <div class="km-5e-card km-5e-card--explain flex-fill">
+                    <div class="km-5e-letter">E</div>
+                    <div class="km-5e-title">Explain</div>
+                    <p class="km-5e-desc">
+                        Guided questions help students connect their exploration to the formal
+                        concept. I clarify, address misconceptions, and build shared understanding.
+                    </p>
+                    <div class="km-5e-example">
+                        <span class="km-5e-example-label">In practice:</span>
+                        Guiding questions, demonstrations, class discussion
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg d-flex">
+                <div class="km-5e-card km-5e-card--elaborate flex-fill">
+                    <div class="km-5e-letter">E</div>
+                    <div class="km-5e-title">Elaborate</div>
+                    <p class="km-5e-desc">
+                        Students apply the concept to new, more complex situations — extending
+                        their understanding and developing independence and creative thinking.
+                    </p>
+                    <div class="km-5e-example">
+                        <span class="km-5e-example-label">In practice:</span>
+                        Scenarios, extended tasks, breakout rooms
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg d-flex">
+                <div class="km-5e-card km-5e-card--evaluate flex-fill">
+                    <div class="km-5e-letter">E</div>
+                    <div class="km-5e-title">Evaluate</div>
+                    <p class="km-5e-desc">
+                        Both teacher and student assess whether learning objectives were achieved.
+                        Reflection is built into every session — for students and for me.
+                    </p>
+                    <div class="km-5e-example">
+                        <span class="km-5e-example-label">In practice:</span>
+                        Checklists, quizzes, teacher reflection, exit activities
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end 5E row -->
+    </div>
+</section>
+
+
+<!-- ============================================================
+     CORE BELIEFS — Three belief pillars
+     Bootstrap 3-column grid on desktop, single column on mobile.
+============================================================ -->
+<section class="km-section km-section--white">
+    <div class="container">
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-6 text-center">
+                <p class="km-section-label">Values</p>
+                <h2 class="km-section-heading">Core Beliefs</h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Belief 1: Student-Centred Learning -->
+            <div class="col-md-4">
+                <div class="km-belief-card">
+                    <!-- Thin gold top border — decorative accent -->
+                    <div class="km-belief-accent"></div>
+                    <h3 class="km-belief-title">Student&#8209;Centred Learning</h3>
+                    <!--
+                      &#8209; is a non-breaking hyphen — prevents
+                      "Student-" from breaking awkwardly across lines
+                    -->
+                    <p class="km-belief-text">
+                        Students are not passive recipients of information. I design lessons
+                        that invite participation, encourage questions, and give learners agency
+                        over their own understanding. I call students by name, acknowledge their
+                        contributions, and create space for them to direct their own learning.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Belief 2: Technology in Teaching -->
+            <div class="col-md-4">
+                <div class="km-belief-card">
+                    <div class="km-belief-accent"></div>
+                    <h3 class="km-belief-title">Technology as a Tool</h3>
+                    <p class="km-belief-text">
+                        Technology should enhance learning, not replace it. I use digital tools —
+                        Kahoot, breakout rooms, slide presentations, live demonstrations — to
+                        create interactive, multi-modal experiences. My ICT background allows me
+                        to connect classroom content directly to real workplace applications.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Belief 3: Inclusion and Differentiation -->
+            <div class="col-md-4">
+                <div class="km-belief-card">
+                    <div class="km-belief-accent"></div>
+                    <h3 class="km-belief-title">Inclusion &amp; Differentiation</h3>
+                    <p class="km-belief-text">
+                        Every classroom has visual, auditory, and kinaesthetic learners. I plan
+                        for this deliberately — demonstrations for visual learners, verbal
+                        explanations for auditory learners, and hands-on lab activities for
+                        kinaesthetic learners. Individual check-ins ensure no student is left behind.
+                    </p>
+                </div>
+            </div>
+
+        </div><!-- end beliefs row -->
+    </div>
+</section>
+
+
+<!-- ============================================================
+     PHILOSOPHY IN PRACTICE — How beliefs show up in teaching
+     Two column layout: quote on left, examples on right.
+     This bridges the abstract (beliefs) to the concrete (evidence).
+============================================================ -->
+<section class="km-section km-section--navy">
+    <!--
+      km-section--navy is a new modifier — dark background section.
+      Defined in the CSS below. Used sparingly for visual contrast.
+    -->
+    <div class="container">
+        <div class="row g-5 align-items-center">
+
+            <!-- Left: pull quote -->
+            <div class="col-lg-5">
+                <p class="km-section-label km-label--light">In the Classroom</p>
+                <h2 class="km-section-heading km-heading--light">
+                    Philosophy Into Practice
+                </h2>
+                <blockquote class="km-quote km-quote--light">
+                    "The feedback I received was constructive and affirmed that what I have
+                    learned in theory is, in fact, what needs to be translated into practice.
+                    The experience has made me a better educator."
+                </blockquote>
+                <p class="km-philosophy-attr km-attr--light">
+                    — From TP1 Section C Reflection, 2025
+                </p>
+            </div>
+
+            <!-- Right: concrete examples from teaching -->
+            <div class="col-lg-7">
+                <div class="km-practice-list">
+
+                    <div class="km-practice-item">
+                        <div class="km-practice-num">01</div>
+                        <div>
+                            <div class="km-practice-title">Real-World Scenarios</div>
+                            <p class="km-practice-desc">
+                                Healthcare databases in Microsoft Access, retail data in Excel,
+                                workplace documents in Word — every topic is anchored to a context
+                                students recognise and will encounter professionally.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="km-practice-item">
+                        <div class="km-practice-num">02</div>
+                        <div>
+                            <div class="km-practice-title">Individual Check-Ins</div>
+                            <p class="km-practice-desc">
+                                During every lab session, I move around the room (or the breakout
+                                rooms) to check each student's progress personally — addressing
+                                confusion before it becomes a barrier.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="km-practice-item">
+                        <div class="km-practice-num">03</div>
+                        <div>
+                            <div class="km-practice-title">Respectful, Professional Tone</div>
+                            <p class="km-practice-desc">
+                                I call students by name, acknowledge their experiences, and maintain
+                                a calm and encouraging classroom climate. Students are more willing
+                                to attempt difficult tasks when they feel safe to make mistakes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="km-practice-item">
+                        <div class="km-practice-num">04</div>
+                        <div>
+                            <div class="km-practice-title">Reflective Practice</div>
+                            <p class="km-practice-desc">
+                                I evaluate every lesson I teach — identifying what worked, what
+                                didn't, and what to adjust next time. Growth as a teacher requires
+                                the same honest self-assessment I ask of my students.
+                            </p>
+                        </div>
+                    </div>
+
+                </div><!-- end practice list -->
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER — Standard footer
+============================================================ -->
+<footer class="km-footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <div class="km-footer-brand">Mr. Kemati Morgan &nbsp;&middot;&nbsp; Teaching Portfolio</div>
+        <div class="km-footer-links">
+            <a href="mailto:kematimorgan@gmail.com">kematimorgan@gmail.com</a>
+            <a href="https://www.linkedin.com/in/kemati-morgan-668386b2/" target="_blank">LinkedIn</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="km-footer-copy">
+            VTDI Postgraduate Diploma in Education &amp; Training &nbsp;&middot;&nbsp; 2024–2026
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
