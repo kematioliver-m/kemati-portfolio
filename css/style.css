@@ -1560,3 +1560,181 @@ body {
 }
 
 
+/* ============================================================
+   CONTACT PAGE STYLES
+   Paste this at the very bottom of your existing style.css
+   ============================================================ */
+
+
+/* ── INFO CARDS (left column) ────────────────────────────────
+   Cards showing email, phone, LinkedIn, location.
+────────────────────────────────────────────────────────────── */
+.km-info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+    padding: 1.5rem;
+    background: var(--km-white);
+    border: 1px solid var(--km-border);
+    border-left: 4px solid var(--km-gold);
+    margin-bottom: 1.25rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.km-info-card:hover {
+    box-shadow: 0 4px 20px rgba(36, 59, 83, 0.1);
+    transform: translateX(3px);
+}
+
+.km-info-icon {
+    width: 44px; height: 44px;
+    min-width: 44px;
+    background-color: var(--km-gold-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--km-gold);
+    font-size: 1.1rem;
+}
+
+.km-info-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--km-slate);
+    margin-bottom: 0.25rem;
+}
+
+.km-info-value {
+    font-family: var(--km-font-body);
+    font-size: 0.95rem;
+    color: var(--km-charcoal);
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.km-info-value a {
+    color: var(--km-navy);
+    text-decoration: none;
+}
+
+.km-info-value a:hover {
+    color: var(--km-gold);
+}
+
+/* Italic closing note below the info cards */
+.km-col-divider {
+    font-family: var(--km-font-heading);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--km-slate);
+    line-height: 1.9;
+    margin-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--km-border);
+}
+
+
+/* ── CONTACT FORM (right column) ─────────────────────────────
+   Formspree-powered form.
+────────────────────────────────────────────────────────────── */
+.km-form-wrap {
+    background: var(--km-white);
+    border: 1px solid var(--km-border);
+    padding: 2.25rem 2rem;
+}
+
+.km-form-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--km-slate);
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.km-form-control {
+    font-family: var(--km-font-body);
+    font-size: 0.9rem;
+    color: var(--km-charcoal);
+    background-color: var(--km-ivory);
+    border: 1px solid var(--km-border);
+    border-radius: 0;
+    padding: 0.65rem 0.9rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1.25rem;
+}
+
+.km-form-control:focus {
+    border-color: var(--km-gold);
+    box-shadow: 0 0 0 3px rgba(176, 141, 87, 0.15);
+    background-color: var(--km-white);
+}
+
+textarea.km-form-control {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* Submit button */
+.km-btn-submit {
+    font-family: var(--km-font-ui);
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+    background-color: var(--km-navy);
+    color: var(--km-ivory);
+    border: none;
+    padding: 0.75rem 2.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.km-btn-submit:hover {
+    background-color: var(--km-gold);
+    transform: translateY(-1px);
+}
+
+.km-btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Success / error feedback messages */
+.km-form-success,
+.km-form-error {
+    font-family: var(--km-font-body);
+    font-size: 0.9rem;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    display: none;
+}
+
+.km-form-success {
+    background-color: #EAF5EE;
+    border-left: 4px solid #2E7D52;
+    color: #1e5c3a;
+}
+
+.km-form-error {
+    background-color: #FDECEA;
+    border-left: 4px solid #C0392B;
+    color: #922b21;
+}
+
+/* ── CONTACT PAGE RESPONSIVE ─────────────────────────────────*/
+@media (max-width: 768px) {
+    .km-form-wrap { padding: 1.5rem 1.25rem; }
+}
+
+
