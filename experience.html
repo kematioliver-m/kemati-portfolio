@@ -1,10 +1,649 @@
 <!DOCTYPE html>
+<!--
+  ============================================================
+  Kemati Morgan — Teaching Portfolio
+  experience.html — Teaching Experience & Timeline
+  ============================================================
+  STRUCTURE:
+  1. <head>     — meta, fonts, Bootstrap, stylesheet
+  2. <nav>      — fixed navbar (active: Experience)
+  3. <header>   — compact page hero
+  4. <section>  — hours summary (4 stat cards)
+  5. <section>  — full placement timeline (detailed)
+  6. <section>  — reflections anchor (links to written reflections)
+  7. <footer>   — standard footer
+  ============================================================
+-->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Mr. Kemati Morgan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
+<!-- ============================================================
+     NAV — active link updated to Experience
+============================================================ -->
+<nav class="navbar navbar-expand-lg fixed-top km-navbar">
+    <div class="container">
+        <a class="navbar-brand km-navbar-brand" href="index.html">Mr. Kemati Morgan</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="philosophy.html">Philosophy</a></li>
+                <li class="nav-item"><a class="nav-link active" href="experience.html">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="lesson-plans.html">Lesson Plans</a></li>
+                <li class="nav-item"><a class="nav-link" href="assessments.html">Assessments</a></li>
+                <li class="nav-item"><a class="nav-link" href="artefacts.html">Artefacts</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ============================================================
+     PAGE HERO
+============================================================ -->
+<header class="km-page-hero">
+    <div class="container">
+        <p class="km-eyebrow">
+            <a href="index.html" class="km-eyebrow-link">Portfolio</a>
+            &nbsp;&rarr;&nbsp; Experience
+        </p>
+        <h1 class="km-page-hero-title">Teaching Experience</h1>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     HOURS SUMMARY — Four stat cards at a glance
+     Bootstrap col-6 col-md-3 = 2 per row on mobile, 4 on desktop
+============================================================ -->
+<section class="km-section km-section--ivory">
+    <div class="container">
+
+        <div class="row g-3 mb-5">
+
+            <div class="col-6 col-md-3">
+                <div class="km-summary-card">
+                    <div class="km-summary-num">229+</div>
+                    <div class="km-summary-label">Total Hours</div>
+                    <div class="km-summary-sub">Across all placements</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="km-summary-card">
+                    <div class="km-summary-num">4</div>
+                    <div class="km-summary-label">Institutions</div>
+                    <div class="km-summary-sub">EXCED · UCC · Rockfort · VTDI</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="km-summary-card">
+                    <div class="km-summary-num">2</div>
+                    <div class="km-summary-label">Academic Years</div>
+                    <div class="km-summary-sub">2024/25 · 2025/26</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="km-summary-card km-summary-card--gold">
+                    <div class="km-summary-num">95.6%</div>
+                    <div class="km-summary-label">Top Evaluation</div>
+                    <div class="km-summary-sub">VTDI TP1 Assessment</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TP breakdown bar -->
+        <div class="km-tp-bar">
+            <div class="km-tp-label">
+                <span class="km-tp-tag km-tp-tag--1">TP1</span>
+                <span class="km-tp-hrs">151 hrs</span>
+                <span class="km-tp-note">EXCED · UCC · Rockfort · VTDI</span>
+            </div>
+            <div class="km-tp-label">
+                <span class="km-tp-tag km-tp-tag--2">TP2</span>
+                <span class="km-tp-hrs">78 hrs</span>
+                <span class="km-tp-note">UCC · AY 2025/26</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ============================================================
+     PLACEMENT TIMELINE — Detailed breakdown per institution
+     Each placement is a full-width block with:
+     - Header: period, institution, supervisor
+     - Body: course details, hours, topics, documents
+     Alternates ivory/white background for visual separation.
+============================================================ -->
+<section class="km-section km-section--white">
+    <div class="container">
+
+        <p class="km-section-label">Placements</p>
+        <h2 class="km-section-heading">Full Teaching Timeline</h2>
+
+        <!-- ── PLACEMENT 1: EXCED ── -->
+        <div class="km-placement">
+
+            <div class="km-placement-header">
+                <div class="km-placement-meta">
+                    <span class="km-placement-period">Sep – Nov 2024</span>
+                    <span class="km-placement-tp km-placement-tp--1">TP1</span>
+                </div>
+                <h3 class="km-placement-inst">Excelsior Community College (EXCED)</h3>
+                <p class="km-placement-course">
+                    Fundamentals of Information Technology — Lab Component
+                </p>
+                <p class="km-placement-supervisor">
+                    Supervisor: Mr. Dameyan Cole &nbsp;&middot;&nbsp;
+                    Thursdays &amp; Fridays &nbsp;&middot;&nbsp; 6:00–8:00PM / 7:00–9:00PM
+                </p>
+            </div>
+
+            <div class="row g-4 mt-1">
+
+                <!-- Details column -->
+                <div class="col-md-7">
+                    <p class="km-body-text">
+                        My first independent teaching opportunity. I led the laboratory component
+                        of the Fundamentals of IT course for approximately 50 undergraduate students,
+                        focusing entirely on Microsoft Access over three teaching weeks. This experience
+                        established my classroom presence and introduced me to the demands of managing
+                        a large practical lab session.
+                    </p>
+                    <p class="km-body-text">
+                        Topics covered progressed from database fundamentals through to data import
+                        and field property management — with a real-world healthcare scenario used
+                        as the contextual anchor for all three lessons.
+                    </p>
+
+                    <!-- Topics taught list -->
+                    <div class="km-topics">
+                        <div class="km-topics-label">Topics Taught</div>
+                        <div class="km-topics-list">
+                            <span class="km-topic">Introduction to Microsoft Access</span>
+                            <span class="km-topic">Tables &amp; Primary Keys</span>
+                            <span class="km-topic">Queries &amp; Forms</span>
+                            <span class="km-topic">Data Import &amp; Field Properties</span>
+                            <span class="km-topic">Datasheet vs Design View</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats + documents column -->
+                <div class="col-md-5">
+                    <div class="km-placement-stats">
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">30</div>
+                            <div class="km-pstat-label">Teaching Hours</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">~50</div>
+                            <div class="km-pstat-label">Students</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">3</div>
+                            <div class="km-pstat-label">Lesson Plans</div>
+                        </div>
+                    </div>
+
+                    <!-- Document links — replace # with actual Google Drive links -->
+                    <div class="km-docs">
+                        <div class="km-docs-label">Documents</div>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Signed Timesheet — D. Cole
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Lesson Plans (3) — MS Access
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Course Delivery Plan
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- end EXCED placement -->
+
+        <hr class="km-placement-divider">
+
+        <!-- ── PLACEMENT 2: UCC TP1 ── -->
+        <div class="km-placement">
+
+            <div class="km-placement-header">
+                <div class="km-placement-meta">
+                    <span class="km-placement-period">Sep – Nov 2024</span>
+                    <span class="km-placement-tp km-placement-tp--1">TP1</span>
+                </div>
+                <h3 class="km-placement-inst">University of the Commonwealth Caribbean (UCC)</h3>
+                <p class="km-placement-course">
+                    Computer Information Essentials — ITT107 (Online)
+                </p>
+                <p class="km-placement-supervisor">
+                    Supervisor: Mr. Otis Osbourne &nbsp;&middot;&nbsp;
+                    Mondays &nbsp;&middot;&nbsp; 5:30–8:30PM
+                </p>
+            </div>
+
+            <div class="row g-4 mt-1">
+                <div class="col-md-7">
+                    <p class="km-body-text">
+                        My first experience in an online tertiary classroom. Over 12 weeks I
+                        alternated between observation and active teaching, gradually taking ownership
+                        of sessions covering infrastructure, software development, file systems, and
+                        assessment administration.
+                    </p>
+                    <p class="km-body-text">
+                        Teaching online required a different set of skills — managing participation
+                        through chat, checking for understanding without physical cues, and keeping
+                        students engaged across a 3-hour evening session.
+                    </p>
+                    <div class="km-topics">
+                        <div class="km-topics-label">Topics Taught</div>
+                        <div class="km-topics-list">
+                            <span class="km-topic">Introduction to Infrastructure</span>
+                            <span class="km-topic">Overview of Infrastructure</span>
+                            <span class="km-topic">Software Development</span>
+                            <span class="km-topic">Applications &amp; Software</span>
+                            <span class="km-topic">Using File Systems</span>
+                            <span class="km-topic">Assessment Administration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="km-placement-stats">
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">36</div>
+                            <div class="km-pstat-label">Total Hours</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">6</div>
+                            <div class="km-pstat-label">Teaching Weeks</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">6</div>
+                            <div class="km-pstat-label">Obs. Weeks</div>
+                        </div>
+                    </div>
+                    <div class="km-docs">
+                        <div class="km-docs-label">Documents</div>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Signed Timesheet — O. Osbourne
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            CIE Module Lesson Plans (4)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end UCC TP1 -->
+
+        <hr class="km-placement-divider">
+
+        <!-- ── PLACEMENT 3: Rockfort VTC ── -->
+        <div class="km-placement">
+
+            <div class="km-placement-header">
+                <div class="km-placement-meta">
+                    <span class="km-placement-period">Jan – Apr 2025</span>
+                    <span class="km-placement-tp km-placement-tp--1">TP1</span>
+                </div>
+                <h3 class="km-placement-inst">Rockfort Vocational Training Centre — HEART/NSTA</h3>
+                <p class="km-placement-course">
+                    Carry Out Data Entry &amp; Retrieval Procedures — ITICOR0011A
+                </p>
+                <p class="km-placement-supervisor">
+                    Supervisors: Mr. Marlon Walker (Construction) &nbsp;&middot;&nbsp;
+                    Ms. Sheryl-Ann Brooks (Admin)
+                </p>
+            </div>
+
+            <div class="row g-4 mt-1">
+                <div class="col-md-7">
+                    <p class="km-body-text">
+                        My most varied placement — two separate student streams at the same institution.
+                        I taught the Construction stream first (January–February), then transitioned to
+                        the Administrative Assistance Level 3 stream (February–April). Each stream had
+                        distinct learning needs and classroom dynamics.
+                    </p>
+                    <p class="km-body-text">
+                        This placement culminated in my VTDI TP1 evaluation on March 24, 2025, where
+                        I delivered a lesson on Using Presentation Software to the Administrative
+                        stream and received a score of 95.6% (258/270).
+                    </p>
+                    <div class="km-topics">
+                        <div class="km-topics-label">Topics Taught</div>
+                        <div class="km-topics-list">
+                            <span class="km-topic">Microsoft Word</span>
+                            <span class="km-topic">Microsoft Excel</span>
+                            <span class="km-topic">Microsoft PowerPoint</span>
+                            <span class="km-topic">Data Entry &amp; Retrieval</span>
+                            <span class="km-topic">Internet &amp; File Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="km-placement-stats">
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">40</div>
+                            <div class="km-pstat-label">Total Hours</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">95.6%</div>
+                            <div class="km-pstat-label">Evaluation Score</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">2</div>
+                            <div class="km-pstat-label">Student Streams</div>
+                        </div>
+                    </div>
+                    <div class="km-docs">
+                        <div class="km-docs-label">Documents</div>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Timesheet — Construction (M. Walker)
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Timesheet — Admin (S. Brooks)
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            VTDI Evaluation Form — 95.6%
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Lesson Plan — Data Entry &amp; Retrieval
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end Rockfort -->
+
+        <hr class="km-placement-divider">
+
+        <!-- ── PLACEMENT 4: VTDI ED109 ── -->
+        <div class="km-placement">
+
+            <div class="km-placement-header">
+                <div class="km-placement-meta">
+                    <span class="km-placement-period">Jan – Apr 2025</span>
+                    <span class="km-placement-tp km-placement-tp--1">TP1</span>
+                </div>
+                <h3 class="km-placement-inst">Vocational Training Development Institute (VTDI)</h3>
+                <p class="km-placement-course">
+                    Introduction to ICT for Educators — ED109 (Online)
+                </p>
+                <p class="km-placement-supervisor">
+                    Supervisor: Ms. Carla Brooks-Orr &nbsp;&middot;&nbsp;
+                    Wednesdays &nbsp;&middot;&nbsp; 5:30–8:30PM
+                </p>
+            </div>
+
+            <div class="row g-4 mt-1">
+                <div class="col-md-7">
+                    <p class="km-body-text">
+                        Teaching at VTDI itself — the institution where I am enrolled — was a
+                        unique experience. I co-facilitated online sessions for B.Ed. in Applied
+                        Technology students, covering the full Microsoft Office suite alongside
+                        digital citizenship and internet skills.
+                    </p>
+                    <p class="km-body-text">
+                        I was responsible for preparing and sharing notes with students before
+                        sessions, designing and marking assessments, and maintaining consistent
+                        communication with both students and the supervising lecturer.
+                    </p>
+                    <div class="km-topics">
+                        <div class="km-topics-label">Topics Taught</div>
+                        <div class="km-topics-list">
+                            <span class="km-topic">Digital Citizenship</span>
+                            <span class="km-topic">Presentation Software</span>
+                            <span class="km-topic">Word Processing</span>
+                            <span class="km-topic">Spreadsheet Software</span>
+                            <span class="km-topic">Internet Skills</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="km-placement-stats">
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">45</div>
+                            <div class="km-pstat-label">Teaching Hours</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">15</div>
+                            <div class="km-pstat-label">Sessions</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">~25</div>
+                            <div class="km-pstat-label">Students</div>
+                        </div>
+                    </div>
+                    <div class="km-docs">
+                        <div class="km-docs-label">Documents</div>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Signed Timesheet — C. Brooks-Orr
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Course Outline — ED109
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Grade Sheet &amp; Assessment Rubric
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end VTDI ED109 -->
+
+        <hr class="km-placement-divider">
+
+        <!-- ── PLACEMENT 5: UCC TP2 ── -->
+        <div class="km-placement">
+
+            <div class="km-placement-header">
+                <div class="km-placement-meta">
+                    <span class="km-placement-period">Sep 2025 – Apr 2026</span>
+                    <span class="km-placement-tp km-placement-tp--2">TP2</span>
+                </div>
+                <h3 class="km-placement-inst">University of the Commonwealth Caribbean (UCC)</h3>
+                <p class="km-placement-course">
+                    Computer Information Essentials — ITT107 (Online)
+                </p>
+                <p class="km-placement-supervisor">
+                    Supervisor: Mr. Otis Osbourne &nbsp;&middot;&nbsp;
+                    Wednesdays &nbsp;&middot;&nbsp; 6:00–9:00PM
+                </p>
+            </div>
+
+            <div class="row g-4 mt-1">
+                <div class="col-md-7">
+                    <p class="km-body-text">
+                        My most substantial placement — a full academic year of online lecturing
+                        across two semesters. I delivered 26 sessions covering the complete
+                        CIE curriculum, including two make-up sessions (Ash Wednesday and an
+                        academic holiday).
+                    </p>
+                    <p class="km-body-text">
+                        My TP2 evaluation took place on February 25, 2026 — assessed by two
+                        evaluators simultaneously (Ms. Marvia Grant-Henry and Mr. Andrew C. Samuels).
+                        I received scores of 93% and 82.5% respectively, with both evaluators
+                        commending my confidence, content knowledge, and student engagement.
+                    </p>
+                    <div class="km-topics">
+                        <div class="km-topics-label">Topics Taught</div>
+                        <div class="km-topics-list">
+                            <span class="km-topic">Computer Hardware &amp; Software</span>
+                            <span class="km-topic">Operating Systems</span>
+                            <span class="km-topic">Internet &amp; Networking</span>
+                            <span class="km-topic">Data &amp; Privacy</span>
+                            <span class="km-topic">Cybersecurity</span>
+                            <span class="km-topic">Microsoft Excel (Practical)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="km-placement-stats">
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">78</div>
+                            <div class="km-pstat-label">Total Hours</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">26</div>
+                            <div class="km-pstat-label">Sessions</div>
+                        </div>
+                        <div class="km-pstat">
+                            <div class="km-pstat-num">93%</div>
+                            <div class="km-pstat-label">Top Evaluation</div>
+                        </div>
+                    </div>
+                    <div class="km-docs">
+                        <div class="km-docs-label">Documents</div>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Timesheet — Fall 2025
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Timesheet — Spring 2026
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Evaluation — Grant-Henry (93%)
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Evaluation — Samuels (82.5%)
+                        </a>
+                        <a href="#" class="km-doc-link">
+                            <span class="km-doc-icon">&#128196;</span>
+                            Section C Reflections (both)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end UCC TP2 -->
+
+    </div>
+</section>
+
+
+<!-- ============================================================
+     REFLECTIONS ANCHOR — id="reflections" for card link
+     Brief intro to reflective practice, links to written
+     reflections for each placement.
+============================================================ -->
+<section class="km-section km-section--navy" id="reflections">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <p class="km-section-label km-label--light">Reflection &amp; Growth</p>
+                <h2 class="km-section-heading km-heading--light">Reflective Journal</h2>
+                <p class="km-body-text" style="color: rgba(255,255,255,0.55);">
+                    Reflection is built into every placement. After each lesson I evaluate what
+                    worked, what didn't, and what I would do differently. These written reflections
+                    document my growth as a teaching professional across two academic years.
+                </p>
+
+                <!-- Reflection links — one per placement -->
+                <div class="km-reflection-links mt-4">
+
+                    <a href="#" class="km-reflection-link">
+                        <span class="km-reflection-inst">EXCED</span>
+                        <span class="km-reflection-desc">Lesson reflections — MS Access series</span>
+                        <span class="km-reflection-arrow">&rarr;</span>
+                    </a>
+
+                    <a href="#" class="km-reflection-link">
+                        <span class="km-reflection-inst">UCC TP1</span>
+                        <span class="km-reflection-desc">Section C — TP1 evaluation reflection</span>
+                        <span class="km-reflection-arrow">&rarr;</span>
+                    </a>
+
+                    <a href="#" class="km-reflection-link">
+                        <span class="km-reflection-inst">Rockfort VTC</span>
+                        <span class="km-reflection-desc">Section C — TP1 evaluation reflection</span>
+                        <span class="km-reflection-arrow">&rarr;</span>
+                    </a>
+
+                    <a href="#" class="km-reflection-link">
+                        <span class="km-reflection-inst">UCC TP2</span>
+                        <span class="km-reflection-desc">Section C — Grant-Henry &amp; Samuels evaluations</span>
+                        <span class="km-reflection-arrow">&rarr;</span>
+                    </a>
+
+                </div>
+
+                <p class="mt-4" style="font-family: var(--km-font-ui); font-size: 0.72rem;
+             color: rgba(255,255,255,0.3); letter-spacing: 0.08em;">
+                    Links will be updated with Google Drive documents as they are finalised.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="km-footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <div class="km-footer-brand">Mr. Kemati Morgan &nbsp;&middot;&nbsp; Teaching Portfolio</div>
+        <div class="km-footer-links">
+            <a href="mailto:kematimorgan@gmail.com">kematimorgan@gmail.com</a>
+            <a href="https://www.linkedin.com/in/kemati-morgan-668386b2/" target="_blank">LinkedIn</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="km-footer-copy">
+            VTDI Postgraduate Diploma in Education &amp; Training &nbsp;&middot;&nbsp; 2024–2026
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>

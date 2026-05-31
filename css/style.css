@@ -1230,3 +1230,333 @@ body {
     margin: 0;
 }
 
+/* ============================================================
+   EXPERIENCE PAGE STYLES
+   Append these to the bottom of style.css
+   ============================================================ */
+
+
+/* ── SUMMARY CARDS ───────────────────────────────────────────
+   Four stat cards at the top of the experience page.
+────────────────────────────────────────────────────────────── */
+.km-summary-card {
+    border: 1px solid var(--km-border);
+    padding: 1.5rem 1.25rem;
+    background-color: var(--km-white);
+    text-align: center;
+    height: 100%;
+}
+.km-summary-card--gold {
+    background-color: var(--km-navy);
+    border-color: var(--km-navy);
+}
+.km-summary-num {
+    font-family: var(--km-font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--km-navy);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.km-summary-card--gold .km-summary-num {
+    color: var(--km-gold);
+}
+.km-summary-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--km-slate);
+    margin-bottom: 4px;
+}
+.km-summary-card--gold .km-summary-label {
+    color: rgba(255,255,255,0.5);
+}
+.km-summary-sub {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    color: var(--km-border);
+}
+.km-summary-card--gold .km-summary-sub {
+    color: rgba(255,255,255,0.25);
+}
+
+
+/* ── TP BAR ──────────────────────────────────────────────────
+   Shows TP1 vs TP2 split at a glance.
+────────────────────────────────────────────────────────────── */
+.km-tp-bar {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--km-white);
+    border: 1px solid var(--km-border);
+    border-top: 3px solid var(--km-navy);
+}
+.km-tp-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.km-tp-tag {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+.km-tp-tag--1 {
+    background-color: var(--km-navy);
+    color: var(--km-white);
+}
+.km-tp-tag--2 {
+    background-color: var(--km-gold);
+    color: var(--km-white);
+}
+.km-tp-hrs {
+    font-family: var(--km-font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--km-navy);
+}
+.km-tp-note {
+    font-family: var(--km-font-ui);
+    font-size: 0.7rem;
+    color: var(--km-slate);
+}
+
+
+/* ── PLACEMENT BLOCKS ────────────────────────────────────────
+   Each placement is a large content block.
+   Header shows period, TP tag, institution, course, supervisor.
+────────────────────────────────────────────────────────────── */
+.km-placement {
+    padding: 2.5rem 0;
+}
+
+.km-placement-header {
+    margin-bottom: 1rem;
+}
+
+.km-placement-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.km-placement-period {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+}
+
+/* TP1/TP2 tag on placements */
+.km-placement-tp {
+    font-family: var(--km-font-ui);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 2px;
+}
+.km-placement-tp--1 {
+    background-color: var(--km-navy);
+    color: var(--km-white);
+}
+.km-placement-tp--2 {
+    background-color: var(--km-gold);
+    color: var(--km-white);
+}
+
+.km-placement-inst {
+    font-family: var(--km-font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--km-navy);
+    margin-bottom: 4px;
+    line-height: 1.1;
+}
+
+.km-placement-course {
+    font-family: var(--km-font-body);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--km-slate);
+    margin-bottom: 4px;
+}
+
+.km-placement-supervisor {
+    font-family: var(--km-font-ui);
+    font-size: 0.72rem;
+    color: var(--km-slate);
+    letter-spacing: 0.02em;
+}
+
+/* Thin divider between placements */
+.km-placement-divider {
+    border: none;
+    border-top: 1px solid var(--km-border);
+    margin: 0;
+}
+
+
+/* ── TOPICS ──────────────────────────────────────────────────
+   Tag cloud of topics taught in each placement.
+────────────────────────────────────────────────────────────── */
+.km-topics {
+    margin-top: 1.25rem;
+}
+.km-topics-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    margin-bottom: 0.5rem;
+}
+.km-topics-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.km-topic {
+    font-family: var(--km-font-ui);
+    font-size: 0.68rem;
+    color: var(--km-navy);
+    background-color: var(--km-ivory);
+    border: 1px solid var(--km-border);
+    padding: 4px 12px;
+    border-radius: 2px;
+}
+
+
+/* ── PLACEMENT STATS ─────────────────────────────────────────
+   Three mini stat boxes per placement.
+────────────────────────────────────────────────────────────── */
+.km-placement-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background-color: var(--km-border);
+    border: 1px solid var(--km-border);
+    margin-bottom: 1.25rem;
+}
+.km-pstat {
+    background-color: var(--km-ivory);
+    padding: 1rem 0.75rem;
+    text-align: center;
+}
+.km-pstat-num {
+    font-family: var(--km-font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--km-navy);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.km-pstat-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--km-slate);
+}
+
+
+/* ── DOCUMENT LINKS ──────────────────────────────────────────
+   List of linked documents per placement.
+   Replace href="#" with actual Google Drive URLs.
+────────────────────────────────────────────────────────────── */
+.km-docs {
+    border: 1px solid var(--km-border);
+    padding: 1rem 1.25rem;
+}
+.km-docs-label {
+    font-family: var(--km-font-ui);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    margin-bottom: 0.75rem;
+}
+.km-doc-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--km-font-ui);
+    font-size: 0.75rem;
+    color: var(--km-navy);
+    text-decoration: none;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--km-border);
+    transition: color 0.2s ease;
+}
+.km-doc-link:last-child {
+    border-bottom: none;
+}
+.km-doc-link:hover {
+    color: var(--km-gold);
+}
+.km-doc-icon {
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+
+/* ── REFLECTION LINKS ────────────────────────────────────────
+   Links to reflection documents in the navy section.
+────────────────────────────────────────────────────────────── */
+.km-reflection-links {
+    display: grid;
+    gap: 1px;
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+}
+.km-reflection-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background-color: var(--km-navy);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.km-reflection-link:last-child {
+    border-bottom: none;
+}
+.km-reflection-link:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+.km-reflection-inst {
+    font-family: var(--km-font-ui);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--km-gold);
+    min-width: 80px;
+    flex-shrink: 0;
+}
+.km-reflection-desc {
+    font-family: var(--km-font-body);
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    flex: 1;
+}
+.km-reflection-arrow {
+    color: rgba(255,255,255,0.25);
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+.km-reflection-link:hover .km-reflection-arrow {
+    color: var(--km-gold);
+}
+
+
