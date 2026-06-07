@@ -1,10 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson Plans | Kemati Morgan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg km-nav">
+    <div class="container">
+        <a class="navbar-brand km-brand" href="index.html">Kemati Morgan</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto gap-lg-3">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="philosophy.html">Philosophy</a></li>
+                <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                <li class="nav-item"><a class="nav-link active" href="lesson-plans.html">Lesson Plans</a></li>
+                <li class="nav-item"><a class="nav-link" href="assessments.html">Assessments</a></li>
+                <li class="nav-item"><a class="nav-link" href="artefacts.html">Artefacts</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="lp-hero">
+    <div class="container">
+        <p class="lp-hero-label">Teaching Practice Portfolio</p>
+        <div class="lp-hero-line"></div>
+        <h1>Lesson Plans</h1>
+        <p>A structured record of lessons designed and delivered across four practicum placements — UCC, EXCED, Rockfort VTC, and VTDI — spanning 2024 to 2026. Each plan follows the VTDI 5E instructional framework and aligns with HEART/NSTA competency standards.</p>
+    </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="lp-filter-bar">
+    <div class="container">
+        <div class="d-flex gap-2 flex-wrap">
+            <button class="lp-filter-btn active" onclick="filterPlacement('all', this)">All Placements</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('tp2', this)">TP2 — UCC CIE</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('exced', this)">TP1 — EXCED</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('rockfort', this)">TP1 — Rockfort VTC</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('ed109', this)">TP1 — VTDI ED109</button>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN -->
+<main class="bg-ivory py-2">
+    <div class="container">
+
+        <!-- TP2: UCC CIE ITT107 -->
+        <section class="lp-section" data-placement="tp2">
+            <span class="lp-placement-tag">Teaching Practice 2 · University of the Commonwealth Caribbean</span>
+            <h2 class="lp-section-title">Computer Information Essentials — ITT107</h2>
+            <p class="lp-section-meta">Undergraduate · 65 Students · 6:00 PM – 9:00 PM · Mr. Otis Osbourne (Supervising Lecturer)</p>
+
+            <div class="lp-semester-tabs">
+                <button class="lp-sem-tab active" onclick="switchSem('fall2025', this, 'cie')">Fall 2025</button>
+                <button class="lp-sem-tab" onclick="switchSem('spring2026', this, 'cie')">Spring 2026</button>
+            </div>
+
+            <div id="cie-fall2025">
+                <div class="lp-grid">
+                    <a class="lp-card" href="https://drive.google.com/drive/folders/1FGNBAVaJvfcaASG_iFirBr3tMFAgqhxG" target="_blank">
+                        <p class="lp-card-week">Week 1 &middot; Sep 10, 2025</p>
+                        <h3 class="lp-card-title">Technology Basics &amp; Introduction to IT</h3>
+                        <p class="lp-card-date">Hardware, Software, Data, Binary Representation</p>
+                        <div class="lp-card-footer">
+                            <span class="lp-card-link">View Plan <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+                        </div>
+                    </a>
+                    <a class="lp-card" href="https://drive.google.com/drive/folders/1FGNBAVaJvfcaASG_iFirBr3tMFAgqhxG" target="_blank">
+                        <p class="lp-card-week">Week 2 &middot; Sep 17, 2025</p>
+                        <h3 class="lp-card-title">Data &amp; Privacy</h3>
+                        <p class="lp-card-date">CIA Triad, Data Types, Jamaica Data Protection Act</p>
+                        <div class="lp-card-footer">
+                            <span class="lp-card-link">View Plan <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+                        </div>
+                    </a>
+                    <a class="lp-card" href="https://drive.google.com/drive/folders/1FGNBAVaJvfcaASG_iFirBr3tMFAgqhxG" target="_blank">
+                        <p class="lp-card-week">Week 3 &middot; Sep 24, 2025</p>
+                        <h3 class="lp-card-title">Internet Technologies</h3>
+                        <p class="lp-card-date">TCP/IP, HTTP/S, DNS, Client-Server Model</p>
+                        <div class="lp-card-footer">
+                            <span class="lp-card-link">View Plan <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+                        </div>
+                    </a>
+                    <a class="lp-card" href="https://drive.google.com/drive/folders/1FGNBAVaJvfcaASG_iFirBr3tMFAgqhxG" target="_blank">
+                        <p class="lp-card-week">Week 4 &middot; Oct 1, 2025</p>
+                        <h3 class="lp-card-title">Cybersecurity</h3>
+                        <p class="lp-card-date">Threats, Malware, Phishing, Defensive Controls</p>
+                        <div class="lp-card-footer">
+                            <span class="lp-card-link">View Plan <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+                        </div>
+                    </a>
+                    <a class="lp-card" href="https://drive.google.com/drive/folders/1FGNBAVaJvfcaASG_iFirBr3tMFAgqhxG" target="_blank">
+                        <p class="lp-card-week">Week 5 &middot; Oct 8, 2025</p>
+                        <h3 class="lp-card-title">Networking</h3>
+                        <p class="lp-card-date">Topologies, OSI Model, LAN/WAN, Network Hardware</p>
+                        <div class="lp-card-footer">
+                            <span class="lp-card-link">View Plan <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+                        </div>
+                    </a>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 6 &middot; Oct 15, 2025</p><h3 class="lp-card-title">Applications &amp; Software</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 7 &middot; Oct 22, 2025</p><h3 class="lp-card-title">Operating Systems</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 8 &middot; Oct 29, 2025</p><h3 class="lp-card-title">Hardware</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 9 &middot; Nov 5, 2025</p><h3 class="lp-card-title">Databases</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 10 &middot; Nov 12, 2025</p><h3 class="lp-card-title">Coding &amp; Excel Tutorial 1</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 11 &middot; Nov 19, 2025</p><h3 class="lp-card-title">Future of Tech &amp; AI Essentials</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 12 &middot; Dec 3, 2025</p><h3 class="lp-card-title">AI Essentials &amp; Excel Tutorial 2</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 13 &middot; Dec 10, 2025</p><h3 class="lp-card-title">Review &amp; Closure</h3><p class="lp-card-date">Coming soon</p></div>
+                </div>
+            </div>
+
+            <div id="cie-spring2026" style="display:none;">
+                <div class="lp-grid">
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 1 &middot; Jan 14, 2026</p><h3 class="lp-card-title">Technology Basics &amp; Introduction to IT</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 2 &middot; Jan 21, 2026</p><h3 class="lp-card-title">Data &amp; Privacy</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 3 &middot; Jan 28, 2026</p><h3 class="lp-card-title">Internet Technologies</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 4 &middot; Feb 4, 2026</p><h3 class="lp-card-title">Cybersecurity</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 5 &middot; Feb 11, 2026</p><h3 class="lp-card-title">Networking</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 6 &middot; Feb 18, 2026</p><h3 class="lp-card-title">Applications &amp; Software</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 7 &middot; Feb 25, 2026</p><h3 class="lp-card-title">Operating Systems</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 8 &middot; Mar 4, 2026</p><h3 class="lp-card-title">Hardware</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 9 &middot; Mar 11, 2026</p><h3 class="lp-card-title">Databases</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 10 &middot; Mar 18, 2026</p><h3 class="lp-card-title">Coding &amp; Excel Tutorial 1</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 11 &middot; Mar 25, 2026</p><h3 class="lp-card-title">Future of Tech &amp; AI Essentials</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 12 &middot; Apr 1, 2026</p><h3 class="lp-card-title">AI Essentials &amp; Excel Tutorial 2</h3><p class="lp-card-date">Coming soon</p></div>
+                    <div class="lp-card coming-soon"><p class="lp-card-week">Week 13 &middot; Apr 8, 2026</p><h3 class="lp-card-title">Review &amp; Closure</h3><p class="lp-card-date">Coming soon</p></div>
+                </div>
+            </div>
+
+            <div class="lp-annotation">
+                These lesson plans were developed for the Computer Information Essentials (ITT107) course at the University of the Commonwealth Caribbean under the supervision of Mr. Otis Osbourne. Each plan follows the VTDI 5E instructional model and aligns with HEART/NSTA Level 2 IT Competency Standards, incorporating locally relevant examples, differentiated instruction strategies, and reflective practice.
+            </div>
+        </section>
+
+        <!-- TP1: EXCED -->
+        <section class="lp-section" data-placement="exced">
+            <span class="lp-placement-tag">Teaching Practice 1 · Excelsior Community College</span>
+            <h2 class="lp-section-title">Fundamentals of IT — FIT Lab</h2>
+            <p class="lp-section-meta">IT Lab Sessions · Mr. Dameyan Cole (Supervising Teacher)</p>
+            <div class="lp-grid">
+                <div class="lp-card coming-soon"><p class="lp-card-week">Session 1</p><h3 class="lp-card-title">Introduction to Microsoft Access</h3><p class="lp-card-date">Coming soon</p></div>
+                <div class="lp-card coming-soon"><p class="lp-card-week">Session 2</p><h3 class="lp-card-title">Database Tables &amp; Relationships</h3><p class="lp-card-date">Coming soon</p></div>
+                <div class="lp-card coming-soon"><p class="lp-card-week">Session 3</p><h3 class="lp-card-title">Queries &amp; Forms in Access</h3><p class="lp-card-date">Coming soon</p></div>
+                <div class="lp-card coming-soon"><p class="lp-card-week">Sessions 4–9</p><h3 class="lp-card-title">Additional FIT Lab Sessions</h3><p class="lp-card-date">Coming soon</p></div>
+            </div>
+            <div class="lp-annotation">
+                Lessons delivered at the Excelsior Community College FIT Lab focused on practical database skills using Microsoft Access. Sessions were hands-on and lab-based, with step-by-step demonstrations followed by guided independent practice.
+            </div>
+        </section>
+
+        <!-- TP1: Rockfort VTC -->
+        <section class="lp-section" data-placement="rockfort">
+            <span class="lp-placement-tag">Teaching Practice 1 · Rockfort Vocational Training Centre</span>
+            <h2 class="lp-section-title">Data Operations — Construction &amp; Administrative Assistance</h2>
+            <p class="lp-section-meta">Level 3 · Mr. Marlon Walker &amp; Ms. Sheryl-Ann Brooks (Supervising Teachers)</p>
+            <div class="lp-grid">
+                <div class="lp-card coming-soon"><p class="lp-card-week">Session 1 &middot; Feb 11, 2025</p><h3 class="lp-card-title">Microsoft Word — Document Creation</h3><p class="lp-card-date">Coming soon</p></div>
+                <div class="lp-card coming-soon"><p class="lp-card-week">Session 2 &middot; Feb 20, 2025</p><h3 class="lp-card-title">Microsoft Excel — Data Entry &amp; Formatting</h3><p class="lp-card-date">Coming soon</p></div>
+                <div class="lp-card coming-soon"><p class="lp-card-week">Session 3</p><h3 class="lp-card-title">Additional Data Operations Session</h3><p class="lp-card-date">Coming soon</p></div>
+            </div>
+            <div class="lp-annotation">
+                Sessions at Rockfort VTC were delivered to Level 3 students in the Construction and Administrative Assistance streams. Instruction focused on practical Microsoft Office skills relevant to workplace data handling and professional document production.
+            </div>
+        </section>
+
+        <!-- TP1: VTDI ED109 -->
+        <section class="lp-section" data-placement="ed109">
+            <span class="lp-placement-tag">Teaching Practice 1 · Vocational Training Development Institute</span>
+            <h2 class="lp-section-title">Introduction to ICT for Educators — ED109</h2>
+            <p class="lp-section-meta">45 Hours · Ms. Carla Brooks-Orr (Supervising Teacher)</p>
+            <div class="lp-grid">
+                <div class="lp-card coming-soon"><p class="lp-card-week">Sessions 1–15</p><h3 class="lp-card-title">ICT for Educators — Full Series</h3><p class="lp-card-date">Coming soon</p></div>
+            </div>
+            <div class="lp-annotation">
+                The ED109 placement at VTDI involved 45 hours of instruction in ICT for Educators, supervised by Ms. Carla Brooks-Orr. Session details and lesson plans are currently being compiled and will be uploaded upon completion.
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<!-- SUMMARY STRIP -->
+<div class="lp-summary">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3"><div class="lp-stat"><span class="lp-stat-number">49</span><span class="lp-stat-label">Total Lesson Plans</span></div></div>
+            <div class="col-6 col-md-3"><div class="lp-stat"><span class="lp-stat-number">4</span><span class="lp-stat-label">Practicum Sites</span></div></div>
+            <div class="col-6 col-md-3"><div class="lp-stat"><span class="lp-stat-number">229+</span><span class="lp-stat-label">Teaching Hours</span></div></div>
+            <div class="col-6 col-md-3"><div class="lp-stat"><span class="lp-stat-number">5E</span><span class="lp-stat-label">Instructional Model</span></div></div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="km-footer text-center py-4">
+    <p class="mb-0" style="font-family:'Libre Baskerville',serif; font-size:0.78rem; color:rgba(248,246,241,0.5);">&copy; 2026 Kemati Morgan &middot; Teaching Practice Portfolio</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function filterPlacement(placement, btn) {
+        document.querySelectorAll('.lp-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lp-section').forEach(sec => {
+            sec.style.display = (placement === 'all' || sec.dataset.placement === placement) ? '' : 'none';
+        });
+    }
+    function switchSem(sem, btn, prefix) {
+        document.querySelectorAll('[id^="' + prefix + '-"]').forEach(el => el.style.display = 'none');
+        document.getElementById(prefix + '-' + sem).style.display = '';
+        btn.closest('.lp-semester-tabs').querySelectorAll('.lp-sem-tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+    }
+</script>
 </body>
 </html>
