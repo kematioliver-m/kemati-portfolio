@@ -2,9 +2,301 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefacts | Mr. Kemati Morgan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top km-navbar">
+    <div class="container">
+        <a class="navbar-brand km-navbar-brand" href="index.html">Mr. Kemati Morgan</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="philosophy.html">Philosophy</a></li>
+                <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="lesson-plans.html">Lesson Plans</a></li>
+                <li class="nav-item"><a class="nav-link" href="assessments.html">Assessments</a></li>
+                <li class="nav-item"><a class="nav-link active" href="artefacts.html">Artefacts</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="lp-hero">
+    <div class="container">
+        <p class="lp-hero-label">Teaching Practice Portfolio</p>
+        <div class="lp-hero-line"></div>
+        <h1>Artefacts</h1>
+        <p>Supporting evidence for each placement, including signed timesheets, class registers, activity and assessment materials, school-life participation, and photographic evidence, organised per the VTDI portfolio rubric (Section 2).</p>
+    </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="lp-filter-bar">
+    <div class="container">
+        <div class="d-flex gap-2 flex-wrap">
+            <button class="lp-filter-btn active" onclick="filterPlacement('all', this)">All Placements</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('tp2', this)">TP2 &mdash; UCC CIE</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('exced', this)">TP1 &mdash; EXCED</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('rockfort', this)">TP1 &mdash; Rockfort VTC</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('ed109', this)">TP1 &mdash; VTDI ED109</button>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN -->
+<main class="lp-main">
+    <div class="container">
+
+        <!-- TP2: UCC CIE ITT107 -->
+        <section class="lp-section" data-placement="tp2">
+            <span class="lp-placement-tag">Teaching Practice 2 &middot; University of the Commonwealth Caribbean</span>
+            <h2 class="lp-section-title">CIE ITT107 &mdash; Artefacts</h2>
+            <p class="lp-section-meta">Fall 2025 &amp; Spring 2026 &middot; Supervising Lecturer: Mr. Otis Osbourne</p>
+            <div class="lp-grid">
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Timesheet</p>
+                    <h3 class="lp-card-title">Signed &amp; Stamped Timesheet</h3>
+                    <p class="lp-card-date">Awaiting Mr. Osbourne's signature</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Evaluation</p>
+                    <h3 class="lp-card-title">Section C &mdash; Samuels (82.5%) &amp; Grant-Henry (93%)</h3>
+                    <p class="lp-card-date">Drafted, awaiting countersignature</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Class Register</p>
+                    <h3 class="lp-card-title">Attendance Record</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Activity &amp; Assessment</p>
+                    <h3 class="lp-card-title">Assignments &amp; Marking Rubrics</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">School Life</p>
+                    <h3 class="lp-card-title">Evidence of Participation</h3>
+                    <p class="lp-card-date">Not yet gathered &middot; ~5 hrs short</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Photos &amp; Creativity</p>
+                    <h3 class="lp-card-title">Teaching Photos</h3>
+                    <p class="lp-card-date">UCC podium photo available &mdash; see Home page</p>
+                </div>
+
+            </div>
+            <div class="lp-annotation">
+                Evidence for the UCC CIE ITT107 placement, covering both the Fall 2025 and Spring 2026 teaching blocks and the February 25, 2026 evaluation day.
+            </div>
+        </section>
+
+        <!-- TP1: EXCED -->
+        <section class="lp-section" data-placement="exced">
+            <span class="lp-placement-tag">Teaching Practice 1 &middot; Excelsior Community College</span>
+            <h2 class="lp-section-title">EXCED FIT Lab &mdash; Artefacts</h2>
+            <p class="lp-section-meta">ITEC1104 &middot; Supervising Teacher: Mr. Dameyan Cole</p>
+            <div class="lp-grid">
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Timesheet</p>
+                    <h3 class="lp-card-title">Signed &amp; Stamped Timesheet</h3>
+                    <p class="lp-card-date">Signed by Mr. Cole &mdash; ready to upload</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Evaluation</p>
+                    <h3 class="lp-card-title">TP1 Uses a Single Evaluator</h3>
+                    <p class="lp-card-date">Formal evaluation recorded under Rockfort VTC</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Class Register</p>
+                    <h3 class="lp-card-title">Attendance Record</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+                <a class="lp-card" href="assessments.html">
+                    <p class="lp-card-week">Activity &amp; Assessment</p>
+                    <h3 class="lp-card-title">Unit Assessments (Word, PowerPoint, Excel, Access)</h3>
+                    <p class="lp-card-date">All 4 unit assessments documented</p>
+                    <span class="lp-card-link">View on Assessments Page <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">School Life</p>
+                    <h3 class="lp-card-title">Evidence of Participation</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Photos &amp; Creativity</p>
+                    <h3 class="lp-card-title">Teaching Photos</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+            </div>
+            <div class="lp-annotation">
+                Evidence for the 15-session EXCED FIT Lab placement, spanning Word Processing through PowerPoint, Excel, and Access.
+            </div>
+        </section>
+
+        <!-- TP1: Rockfort VTC -->
+        <section class="lp-section" data-placement="rockfort">
+            <span class="lp-placement-tag">Teaching Practice 1 &middot; Rockfort Vocational Training Centre</span>
+            <h2 class="lp-section-title">Rockfort VTC &mdash; Artefacts</h2>
+            <p class="lp-section-meta">Level 3 &middot; Supervising Teachers: Mr. Marlon Walker &amp; Ms. Sheryl-Ann Brooks</p>
+            <div class="lp-grid">
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Timesheet</p>
+                    <h3 class="lp-card-title">Signed &amp; Stamped Timesheet</h3>
+                    <p class="lp-card-date">Signed &mdash; ready to upload</p>
+                </div>
+
+                <a class="lp-card" href="index.html#evaluation">
+                    <p class="lp-card-week">Evaluation</p>
+                    <h3 class="lp-card-title">Samuels &mdash; 95.6% (Using Presentation Software)</h3>
+                    <p class="lp-card-date">TP1's single evaluation &middot; full breakdown on Home page</p>
+                    <span class="lp-card-link">View on Home Page <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Class Register</p>
+                    <h3 class="lp-card-title">Attendance Record</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Activity &amp; Assessment</p>
+                    <h3 class="lp-card-title">Assignments &amp; Marking Rubrics</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">School Life</p>
+                    <h3 class="lp-card-title">Evidence of Participation</h3>
+                    <p class="lp-card-date">Not yet gathered &middot; ~13 hrs short (TP1 total)</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Photos &amp; Creativity</p>
+                    <h3 class="lp-card-title">Classroom &amp; Evaluation Photos</h3>
+                    <p class="lp-card-date">5 photos available &mdash; see Experience page</p>
+                </div>
+
+            </div>
+            <div class="lp-annotation">
+                Evidence for the 12-session Rockfort VTC placement across the Construction and Administrative Assistance streams, including the March 24, 2025 evaluated lesson (95.6%).
+            </div>
+        </section>
+
+        <!-- TP1: VTDI ED109 -->
+        <section class="lp-section" data-placement="ed109">
+            <span class="lp-placement-tag">Teaching Practice 1 &middot; VTDI</span>
+            <h2 class="lp-section-title">ED109 &mdash; Artefacts</h2>
+            <p class="lp-section-meta">B.Ed. Applied Technology (Online) &middot; Supervising Teacher: Ms. Carla Brooks-Orr</p>
+            <div class="lp-grid">
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Timesheet</p>
+                    <h3 class="lp-card-title">Signed &amp; Stamped Timesheet</h3>
+                    <p class="lp-card-date">Signed &mdash; ready to upload</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Evaluation</p>
+                    <h3 class="lp-card-title">TP1 Uses a Single Evaluator</h3>
+                    <p class="lp-card-date">Formal evaluation recorded under Rockfort VTC</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Class Register</p>
+                    <h3 class="lp-card-title">Attendance Record</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+                <a class="lp-card" href="assessments.html">
+                    <p class="lp-card-week">Activity &amp; Assessment</p>
+                    <h3 class="lp-card-title">Final Assessment Documented</h3>
+                    <p class="lp-card-date">Individual assignments still not gathered</p>
+                    <span class="lp-card-link">View on Assessments Page <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">School Life</p>
+                    <h3 class="lp-card-title">Evidence of Participation</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Photos &amp; Creativity</p>
+                    <h3 class="lp-card-title">Teaching Photos</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+            </div>
+            <div class="lp-annotation">
+                Evidence for the 15-session ED109 placement, delivered online to B.Ed. Applied Technology students from digital citizenship through to a full ICT skills course.
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="km-footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <div class="km-footer-brand">Mr. Kemati Morgan &nbsp;&middot;&nbsp; Teaching Portfolio</div>
+        <div class="km-footer-links">
+            <a href="mailto:kematimorgan@gmail.com">kematimorgan@gmail.com</a>
+            <a href="https://www.linkedin.com/in/kemati-morgan-668386b2/" target="_blank">LinkedIn</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="km-footer-copy">
+            VTDI Postgraduate Diploma in Education &amp; Training &nbsp;&middot;&nbsp; 2024&ndash;2026
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function filterPlacement(placement, btn) {
+        document.querySelectorAll('.lp-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lp-section').forEach(sec => {
+            sec.style.display = (placement === 'all' || sec.dataset.placement === placement) ? '' : 'none';
+        });
+    }
+</script>
 </body>
 </html>

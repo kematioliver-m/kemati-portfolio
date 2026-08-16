@@ -2,9 +2,228 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessments | Mr. Kemati Morgan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top km-navbar">
+    <div class="container">
+        <a class="navbar-brand km-navbar-brand" href="index.html">Mr. Kemati Morgan</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="philosophy.html">Philosophy</a></li>
+                <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="lesson-plans.html">Lesson Plans</a></li>
+                <li class="nav-item"><a class="nav-link active" href="assessments.html">Assessments</a></li>
+                <li class="nav-item"><a class="nav-link" href="artefacts.html">Artefacts</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="lp-hero">
+    <div class="container">
+        <p class="lp-hero-label">Teaching Practice Portfolio</p>
+        <div class="lp-hero-line"></div>
+        <h1>Assessments</h1>
+        <p>How I measured student learning across four placements, from graded practical assessments to the continuous, informal checks built into every 5E lesson.</p>
+    </div>
+</section>
+
+<!-- ASSESSMENT PHILOSOPHY -->
+<section class="km-intro">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+
+            <div class="col-lg-6">
+                <p class="km-section-label">Assessment Philosophy</p>
+                <h2 class="km-section-heading">Evidence Over Guesswork</h2>
+                <blockquote class="km-quote">
+                    "Assessment should never be a surprise at the end of a unit. Every lesson I plan closes with an Evaluate stage: a deliberate, low-stakes check that tells me, in the moment, whether the lesson actually landed. The graded assessments that follow are never the first time I find out."
+                </blockquote>
+            </div>
+
+            <div class="col-lg-6 km-intro-right">
+                <p class="km-section-label">Two Layers, Working Together</p>
+                <p class="km-body-text">
+                    Across all four placements, assessment happens on two levels. <strong>Formative</strong> checks (questioning, circulation, show-of-hands, the Evaluate stage of every 5E lesson) happen every single session and shape what I do next, not just what grade a student receives.
+                </p>
+                <p class="km-body-text">
+                    <strong>Summative</strong> assessments sit at the end of a unit, once students have had genuine practice with everything they're being asked to demonstrate. The EXCED FIT Lab placement below shows this most clearly: four unit assessments, each worth 10%, each landing only after a full run of scaffolded practice sessions.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section><!-- end assessment philosophy -->
+
+<!-- FILTER BAR -->
+<div class="lp-filter-bar">
+    <div class="container">
+        <div class="d-flex gap-2 flex-wrap">
+            <button class="lp-filter-btn active" onclick="filterPlacement('all', this)">All Placements</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('tp2', this)">TP2 &mdash; UCC CIE</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('exced', this)">TP1 &mdash; EXCED</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('rockfort', this)">TP1 &mdash; Rockfort VTC</button>
+            <button class="lp-filter-btn" onclick="filterPlacement('ed109', this)">TP1 &mdash; VTDI ED109</button>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN -->
+<main class="lp-main">
+    <div class="container">
+
+        <!-- TP2: UCC CIE ITT107 -->
+        <section class="lp-section" data-placement="tp2">
+            <span class="lp-placement-tag">Teaching Practice 2 &middot; University of the Commonwealth Caribbean</span>
+            <h2 class="lp-section-title">CIE ITT107 &mdash; Assessments</h2>
+            <p class="lp-section-meta">Fall 2025 &amp; Spring 2026</p>
+            <div class="lp-grid">
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Assessment Materials</p>
+                    <h3 class="lp-card-title">Assignments &amp; Marking Rubrics</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+            </div>
+            <div class="lp-annotation">
+                Both TP2 evaluation days, scored 82.5% (Mr. Andrew C. Samuels) and 93% (Ms. Marvia Grant-Henry), assessed my own teaching practice rather than student learning directly. Classroom-level assessment materials from this placement are still being gathered.
+            </div>
+        </section>
+
+        <!-- TP1: EXCED -->
+        <section class="lp-section" data-placement="exced">
+            <span class="lp-placement-tag">Teaching Practice 1 &middot; Excelsior Community College</span>
+            <h2 class="lp-section-title">EXCED FIT Lab &mdash; Assessments</h2>
+            <p class="lp-section-meta">ITEC1104 &middot; Four unit assessments, 10% each</p>
+            <div class="lp-grid">
+
+                <a class="lp-card" href="https://docs.google.com/document/d/1kSR2D2OGPWNWNsdKCpoy1dOS5ulWfAxR/edit" target="_blank">
+                    <p class="lp-card-week">Unit 1 &middot; Oct 4, 2024</p>
+                    <h3 class="lp-card-title">Word Processing Assessment</h3>
+                    <p class="lp-card-date">Template-based document, formatting &amp; print setup</p>
+                    <span class="lp-card-link">View Lesson &amp; Assessment <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <a class="lp-card" href="https://docs.google.com/document/d/1knTkaLlYsDSp4d3O38XIdekLps5icPUY/edit" target="_blank">
+                    <p class="lp-card-week">Unit 2 &middot; Oct 11, 2024</p>
+                    <h3 class="lp-card-title">PowerPoint Assessment</h3>
+                    <p class="lp-card-date">Restrained animation, consistent transitions, print handout</p>
+                    <span class="lp-card-link">View Lesson &amp; Assessment <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <a class="lp-card" href="https://docs.google.com/document/d/12gxj944Waiz5wvzWWU_HBEsvGPyJqOZf/edit" target="_blank">
+                    <p class="lp-card-week">Unit 3 &middot; Oct 25, 2024</p>
+                    <h3 class="lp-card-title">Spreadsheet Assessment</h3>
+                    <p class="lp-card-date">Formulas, VLOOKUP, chart creation &amp; printing</p>
+                    <span class="lp-card-link">View Lesson &amp; Assessment <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+                <a class="lp-card" href="https://docs.google.com/document/d/1hFX1QUSfhsLDjeMWjex4HhvlHMhhSPc0/edit" target="_blank">
+                    <p class="lp-card-week">Unit 4 &middot; Nov 8, 2024</p>
+                    <h3 class="lp-card-title">Database Assessment</h3>
+                    <p class="lp-card-date">Data import, query, and relationship demonstration</p>
+                    <span class="lp-card-link">View Lesson &amp; Assessment <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+            </div>
+            <div class="lp-annotation">
+                Each EXCED unit closed with a graded practical assessment, always built directly on top of work students had already produced in the prior session, never a separate, unfamiliar task. Assessment details and criteria are documented within each linked lesson plan's Elaborate stage.
+            </div>
+        </section>
+
+        <!-- TP1: Rockfort VTC -->
+        <section class="lp-section" data-placement="rockfort">
+            <span class="lp-placement-tag">Teaching Practice 1 &middot; Rockfort Vocational Training Centre</span>
+            <h2 class="lp-section-title">Rockfort VTC &mdash; Assessments</h2>
+            <p class="lp-section-meta">Level 3 &middot; Construction &amp; Administrative Assistance streams</p>
+            <div class="lp-grid">
+
+                <div class="lp-card lp-card--soon">
+                    <p class="lp-card-week">Assessment Materials</p>
+                    <h3 class="lp-card-title">Assignments &amp; Marking Rubrics</h3>
+                    <p class="lp-card-date">Not yet gathered</p>
+                </div>
+
+            </div>
+            <div class="lp-annotation">
+                The March 24, 2025 evaluated lesson, "Using Presentation Software," scored 95.6% by Mr. Andrew C. Samuels, assessed my own teaching delivery rather than student learning. See the Home page for the full evaluation breakdown. Classroom-level assessment materials from this placement are still being gathered.
+            </div>
+        </section>
+
+        <!-- TP1: VTDI ED109 -->
+        <section class="lp-section" data-placement="ed109">
+            <span class="lp-placement-tag">Teaching Practice 1 &middot; VTDI</span>
+            <h2 class="lp-section-title">ED109 &mdash; Assessments</h2>
+            <p class="lp-section-meta">B.Ed. Applied Technology (Online) &middot; Cumulative final assessment</p>
+            <div class="lp-grid">
+
+                <a class="lp-card" href="https://docs.google.com/document/d/1jL9LrosSBStaX2-Qi5jA79jUrZz4eXW5/edit" target="_blank">
+                    <p class="lp-card-week">Session 14 &middot; Apr 23, 2025</p>
+                    <h3 class="lp-card-title">Final Assessment Period</h3>
+                    <p class="lp-card-date">Cumulative review &amp; assessment across all four course units</p>
+                    <span class="lp-card-link">View Lesson &amp; Assessment <i class="bi bi-arrow-right"></i></span>
+                </a>
+
+            </div>
+            <div class="lp-annotation">
+                Assessment across this 15-session course was primarily formative, with ongoing assignments tied to each module, culminating in the cumulative Final Assessment linked above. Individual assignment materials are still being gathered.
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="km-footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+        <div class="km-footer-brand">Mr. Kemati Morgan &nbsp;&middot;&nbsp; Teaching Portfolio</div>
+        <div class="km-footer-links">
+            <a href="mailto:kematimorgan@gmail.com">kematimorgan@gmail.com</a>
+            <a href="https://www.linkedin.com/in/kemati-morgan-668386b2/" target="_blank">LinkedIn</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="km-footer-copy">
+            VTDI Postgraduate Diploma in Education &amp; Training &nbsp;&middot;&nbsp; 2024&ndash;2026
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function filterPlacement(placement, btn) {
+        document.querySelectorAll('.lp-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.lp-section').forEach(sec => {
+            sec.style.display = (placement === 'all' || sec.dataset.placement === placement) ? '' : 'none';
+        });
+    }
+</script>
 </body>
 </html>
